@@ -1,0 +1,32 @@
+<!--pages/center/center.wxml-->
+<view id="userWrap">
+  <view id="avator"></view>
+  <view id="userName">NXY</view>
+</view>
+
+<view id="bindPhoneWrap">
+  <view class="cover"></view>
+  <view class="phone">
+    <text class="tel">17777777777</text>
+    <text class="tel-des">绑定即可查看申请进度，定制贷款产品等服务</text>
+  </view>
+  <!-- <view class="bind-btn">未绑定</view> -->
+  <view class="bind-btn">已绑定</view>
+</view>
+
+<view id="menu">
+  <view class="menu-item">
+    <view class="menu-icon"></view>
+    <view class="menu-name">
+      <text class="name">客服电话</text>
+      <text class="arrow"></text>
+    </view>
+  </view>
+  <view class="menu-item">
+    <view class="menu-icon"></view>
+    <view class="menu-name">
+      <text class="name">微信客服</text>
+      <text class="arrow"></text>
+    </view>
+  </view>
+</view>

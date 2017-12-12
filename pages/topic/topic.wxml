@@ -1,0 +1,81 @@
+<!--pages/topic/topic.wxml-->
+<view class="topic-cover">
+  <view class="topic-title">芝麻分就能借</view>
+  <view class="topic-des">#网购不用剁手，月末不吃土。拯救月光！#以下产品只需提供芝麻授权，芝麻分大于500就能贷</view>
+</view>
+
+<view class="suggest">
+  <text class="title">推荐产品</text>
+</view>
+
+<view class="wrap">
+  <view class="product-item" data-id="1" bindtap="toDetail">
+    <view class="product-cover"></view>
+    <view class="product-info">
+      <view class="product-name">
+        <text class="name">宜人贷</text>
+        <view class="success-count">
+          <text class="count">3000</text>
+          <text>人成功申请</text>
+        </view>
+      </view>
+      
+      <view class="tags">
+        <view class="tag">3分钟审核</view>
+        <view class="tag">低服务费</view>
+        <view class="tag">额度大</view>
+        <view class="tag">批核速度快</view>
+        <view class="tag">额度大</view>
+        <view class="tag">批核速度快</view>
+      </view>
+
+      <view class="details">
+        <view class="detail">
+          <text class="detail-des">可借额度</text>
+          <text class="detail-money">2000~10万</text>
+        </view>
+        <view class="detail">
+          <text class="detail-des">月利率</text>
+          <text class="detail-money">0.8%</text>
+        </view>
+        <view class="detail">
+          <text class="detail-des">下款时间</text>
+          <text class="detail-money">当天放款</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+</view>
+
+<view class="topic">
+  <view class="head">精选贷款专题</view>
+  <scroll-view scroll-x="true" class="cards">
+    <view class="card-wrap">
+      <view class="card" data-id="1" bindtap="toTopic">
+        <view class="title">芝麻分就能借</view>
+        <view class="des">秒下5000不剁手</view>
+      </view>
+    </view>
+    <view class="card-wrap">
+      <view class="card" data-id="1" bindtap="toTopic">
+        <view class="title">芝麻分就能借</view>
+        <view class="des">秒下5000不剁手</view>
+      </view>
+    </view>
+    <view class="card-wrap">
+      <view class="card" data-id="1" bindtap="toTopic">
+        <view class="title">芝麻分就能借</view>
+        <view class="des">秒下5000不剁手</view>
+      </view>
+    </view>
+    <view class="card-wrap">
+      <view class="card" data-id="1" bindtap="toTopic">
+        <view class="title">芝麻分就能借</view>
+        <view class="des">秒下5000不剁手</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+

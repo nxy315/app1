@@ -1,0 +1,38 @@
+/* pages/topic/topic.wxss */
+page{
+  background-color: #f2f2f2;
+}
+
+.wrap{
+  margin-bottom: 20rpx;
+}
+
+.topic-cover{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 24rpx;  
+  height: 240rpx;
+  background-color: pink;
+  color: #fff;
+}
+.topic-cover .topic-title{
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+}
+.topic-cover .topic-des{
+  font-size: 22rpx;
+}
+
+.suggest{
+  padding-left: 24rpx;
+  height: 70rpx;
+}
+.suggest .title{
+  display: inline-block;
+  height: 66rpx;
+  line-height: 70rpx;
+  color: orange;
+  border-bottom: 4rpx solid orange;
+  font-size: 22rpx;
+}

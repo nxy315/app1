@@ -1,0 +1,70 @@
+/* pages/info/info.wxss */
+page{
+  background-color: #f2f2f2;
+}
+#infoForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100rpx 35rpx 0;
+  padding: 0 0 40rpx;
+  width: 680rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 8rpx 28rpx 4rpx #ccc;
+}
+#infoForm .form-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-bottom: 1rpx solid #ccc;
+  width: 620rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+#infoForm .form-item .form-name{
+  width: 150rpx;
+}
+#infoForm .form-item .form-content{}
+#submit{
+  margin-top: 40rpx;
+  width: 620rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background-color: red;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+
+
+.foot-des{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.foot-des .foot-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.foot-des .foot-item .foot-time{
+  margin-bottom: 10rpx;
+  font-size: 24rpx;
+}
+.foot-des .foot-item .foot-info{
+  font-size: 20rpx;
+  color: #ccc;
+}
+.foot-des .arrow{
+  margin: 0 50rpx;
+  width: 20rpx;
+  height: 40rpx;
+  background-color: pink;
+}

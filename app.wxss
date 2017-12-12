@@ -1,0 +1,139 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+page{
+  background-color: white;
+}
+
+/* 精选贷款专题 */
+.topic{
+  padding: 36rpx 0 40rpx;
+  background-color: white;
+}
+.topic .head{
+  margin-bottom: 40rpx;
+  padding-left: 24rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.topic .cards{
+  height: 140rpx;
+  white-space: nowrap;  
+}
+.topic .cards .card-wrap{
+  display: inline-block;
+  margin-left: 20rpx;
+}
+.topic .cards .card-wrap:last-child{
+  margin-right: 20rpx;
+}
+.topic .cards .card-wrap .card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 320rpx;
+  height: 140rpx;
+  background-color: pink;
+  color: white;
+  border-radius: 6rpx;
+}
+.topic .cards .card-wrap .card .title{
+  margin-bottom: 6rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.topic .cards .card-wrap .card .des{
+  font-size: 20rpx;
+}
+
+/* 产品列表页 */
+.product-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 24rpx;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #ccc;
+  background-color: #fff;
+}
+.product-item:last-child{
+  border: none;
+}
+.product-item .product-cover{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 6rpx;
+  border: 1rpx solid #ccc;
+}
+.product-item .product-info{
+  width: 558rpx;
+}
+.product-item .product-info .product-name{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.product-item .product-info .product-name .name{
+  font-size: 30rpx;
+}
+.product-item .product-info .product-name .success-count{
+  font-size: 20rpx;
+  color: #ccc;
+}
+.product-item .product-info .product-name .success-count .count{
+  color: red;
+}
+.product-item .product-info .tags{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 18rpx;
+}
+.product-item .product-info .tags .tag{
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  padding: 0 10rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+  border: 1rpx solid orange;
+  font-size: 20rpx;
+  color: orange;
+  border-radius: 13rpx;
+}
+.product-item .product-info .details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 70rpx;
+}
+.product-item .product-info .details .detail{
+  width: 33.3%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.product-item .product-info .details .detail .detail-des{
+  font-size: 20rpx;
+  color: #ccc;
+}
+.product-item .product-info .details .detail .detail-money{
+  font-size: 24rpx;
+  font-weight: bold;
+}

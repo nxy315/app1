@@ -1,0 +1,65 @@
+/* pages/list/list.wxss */
+#filterWrap{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.fixed-filter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  font-size: 24rpx;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+}
+.filter{
+  width: 33.3%;
+}
+.filter.active{
+  color: orange;
+}
+.filter-list{
+   display: none; 
+  position: relative;
+  z-index: 2;
+  font-size: 26rpx;
+  background-color: #fff;
+}
+.list-item{
+  padding-left: 24rpx;  
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #ccc;  
+}
+.list-item:last-child{
+  border: none;
+}
+.list-item.active{
+  color: orange;
+}
+#mask{
+   display: none; 
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.much{
+  margin-top: 80rpx;
+  padding-left: 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background-color: #ccc;
+  font-size: 20rpx;
+}

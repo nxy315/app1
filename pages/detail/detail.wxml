@@ -1,0 +1,102 @@
+<!--pages/detail/detail.wxml-->
+<view class="product-cover">
+  <view class="cover">cover</view>
+  <view class="info">
+    <text class="name">宜人贷</text>
+    <text class="des">在线申请，批核速度快，申请模式多样。</text>
+  </view>
+</view>
+
+<view>
+  <view>在线申请</view>
+  <view>批核速度快</view>
+  <view>申请模式多样</view>
+</view>
+
+<view>
+  <view>
+    <text>金额</text>
+    <text>额度范围：1000-20000元</text>
+  </view>
+  <view>
+    <text>期限</text>
+    <text>期限范围：12-36个月</text>
+  </view>
+
+  <view>
+    <view>circle</view>
+    <view>
+      <view>
+        <text>g 10000元</text>
+        <text>贷款金额</text>
+      </view>
+      <view>
+        <text>r 30元</text>
+        <text>总利息（参考月利率0.78%）</text>
+      </view>
+      <view>
+        <text>red 10000元</text>
+        <text>月还款</text>
+      </view>
+    </view>
+  </view>
+
+  <view>还款方式：等额本息</view>
+</view>
+
+<view>
+  <view>所需材料</view>
+  <view>
+    <view>
+      <view>icon</view>
+      <view>身份证</view>
+    </view>
+    <view>
+      <view>icon</view>
+      <view>信用卡</view>
+    </view>
+    <view>
+      <view>icon</view>
+      <view>手机认证</view>
+    </view>
+  </view>
+</view>
+
+<view>
+  <view>
+    <text>申请条件</text>
+    <view>
+      有信用卡
+    </view>
+  </view>
+  <view>
+    <text>所需材料说明</text>
+    <view>
+      手机实名制等
+    </view>
+  </view>
+  <view>
+    <text>利率说明</text>
+    <view>
+      <view>
+        <text>贷款期限</text>
+        <text>12~36期</text>
+      </view>
+      <view>
+        <text>月利率</text>
+        <text>0.78%</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view>
+  <view></view>
+  <button>免费申请</button>
+</view>
+<contact-button 
+  type="default-light" 
+  size="20"
+  session-from="weapp"
+>免费申请
+</contact-button>

@@ -1,0 +1,107 @@
+<!--pages/home/home.wxml-->
+<view id="fastEnter">
+  <view class="enter" data-id="1" bindtap="toList">
+    <view class="icon"></view>
+    <view class="des">1万以下</view>
+  </view>
+  <view class="enter" data-id="2" bindtap="toList">
+    <view class="icon"></view>
+    <view class="des">1万~5万</view>
+  </view>
+  <view class="enter" data-id="3" bindtap="toList">
+    <view class="icon"></view>
+    <view class="des">5万以上</view>
+  </view>
+  <view class="enter" data-id="4" bindtap="toList">
+    <view class="icon"></view>
+    <view class="des">急用钱</view>
+  </view>
+</view>
+
+<view class="block"></view>
+
+<view class="topic">
+  <view class="head">精选贷款专题</view>
+  <scroll-view scroll-x="true" class="cards">
+    <view class="card-wrap">
+      <view class="card" data-id="1" bindtap="toTopic">
+        <view class="title">芝麻分就能借</view>
+        <view class="des">秒下5000不剁手</view>
+      </view>
+    </view>
+    <view class="card-wrap">
+      <view class="card" data-id="1" bindtap="toTopic">
+        <view class="title">芝麻分就能借</view>
+        <view class="des">秒下5000不剁手</view>
+      </view>
+    </view>
+    <view class="card-wrap">
+      <view class="card" data-id="1" bindtap="toTopic">
+        <view class="title">芝麻分就能借</view>
+        <view class="des">秒下5000不剁手</view>
+      </view>
+    </view>
+    <view class="card-wrap">
+      <view class="card" data-id="1" bindtap="toTopic">
+        <view class="title">芝麻分就能借</view>
+        <view class="des">秒下5000不剁手</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="block"></view>
+
+<view class="hot-list">
+  <view class="hot-title">
+    <text class="title">必撸新口子</text>
+    <text class="des">借不到钱看这里</text>
+  </view>
+
+  <view class="list">
+    <view class="item" data-id="1" bindtap="toDetail">
+      <view class="cover"></view>
+      <view class="detail">
+        <view class="name">
+          <view>即速贷</view>
+          <view class="tail">
+            <text class="time">3分钟</text>
+            <text class="fk">放款</text>
+          </view>
+        </view>
+        <view class="count">1万-20万/1000人申请</view>
+        <view class="info">因为专业，所以恒久因为专业，所以</view>
+      </view>
+      <view class="apply">申请</view>
+    </view>
+    
+  </view>
+</view>
+
+<view class="block"></view>
+
+<view class="hot-list">
+  <view class="hot-title">
+    <text class="title">热门口子人气榜</text>
+    <text class="des">大家喜欢的才是最好的！</text>
+  </view>
+
+  <view class="list">
+    <view class="item" data-id="1" bindtap="toDetail">
+      <view class="cover"></view>
+      <view class="detail">
+        <view class="name">
+          <view>即速贷</view>
+          <view class="tail">
+            <text class="time">3分钟</text>
+            <text class="fk">放款</text>
+          </view>
+        </view>
+        <view class="count">1万-20万/1000人申请</view>
+        <view class="info">因为专业，所以恒久因为专业，所以</view>
+      </view>
+      <view class="apply">申请</view>
+    </view>
+    
+  </view>
+</view>

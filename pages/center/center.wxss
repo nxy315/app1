@@ -1,0 +1,100 @@
+/* pages/center/center.wxss */
+page{
+  background-color: #ccc;
+}
+#userWrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  height: 220rpx;
+  background-color: #666;
+}
+#avator{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+#userName{
+  color: #fff;
+  font-size: 28rpx;
+}
+
+#bindPhoneWrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+  padding: 40rpx 30rpx;
+  background-color: #fff;
+}
+#bindPhoneWrap .cover{
+  margin-right: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+  background-color: pink;
+  border-radius: 50%;
+}
+#bindPhoneWrap .phone{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 500rpx;
+}
+#bindPhoneWrap .phone .tel{
+  font-size: 26rpx;
+}
+#bindPhoneWrap .phone .tel-des{
+  font-size: 20rpx;
+  color: #ccc;
+}
+#bindPhoneWrap .bind-btn{
+  width: 100rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  text-align: center;
+  background-color: blue;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 6rpx;
+}
+
+#menu{
+  margin-top: 20rpx;
+  background-color: #fff;
+  font-size: 26rpx;
+}
+#menu .menu-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  height: 100rpx;
+}
+#menu .menu-item .menu-icon{
+  width: 30rpx;
+  height: 30rpx;
+  background-color: pink;
+}
+#menu .menu-item .menu-name{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 630rpx;
+  height: 100rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+#menu .menu-item:last-child .menu-name{
+  border: none;
+}
+#menu .menu-item .menu-name .name{}
+#menu .menu-item .menu-name .arrow{
+  width: 20rpx;
+  height: 40rpx;
+  background-color: pink;
+}

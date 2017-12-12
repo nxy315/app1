@@ -1,0 +1,31 @@
+/* pages/detail/detail.wxss */
+.product-cover{
+  padding: 0 30rpx;
+  height: 180rpx;
+  background-color: #666;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.product-cover .cover{
+  margin-right: 20rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 6rpx;
+  background-color: #fff;
+}
+.product-cover .info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 120rpx;
+}
+.product-cover .info .name{
+  margin-bottom: 18rpx;
+  font-size: 30rpx;
+}
+.product-cover .info .des{
+  font-size: 24rpx;
+}
