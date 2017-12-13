@@ -7,96 +7,125 @@
   </view>
 </view>
 
-<view>
-  <view>在线申请</view>
-  <view>批核速度快</view>
-  <view>申请模式多样</view>
+<view class="tags">
+  <view class="tag">在线申请</view>
+  <view class="tag">批核速度快</view>
+  <view class="tag">申请模式多样</view>
 </view>
 
-<view>
-  <view>
-    <text>金额</text>
-    <text>额度范围：1000-20000元</text>
-  </view>
-  <view>
-    <text>期限</text>
-    <text>期限范围：12-36个月</text>
-  </view>
+<view class="block"></view>
 
-  <view>
-    <view>circle</view>
-    <view>
-      <view>
-        <text>g 10000元</text>
-        <text>贷款金额</text>
+<view class="product-info">
+  <view class="title-wrap">
+    <view class="info-title">
+      <view class="title-name">
+        <view class="name">金额</view>
+        <view class="choose"></view>
       </view>
-      <view>
-        <text>r 30元</text>
-        <text>总利息（参考月利率0.78%）</text>
+      <text class="title-range">额度范围：1000-20000元</text>
+    </view>
+    <view class="info-title">
+      <view class="title-name">
+        <view class="name">期限</view>
+        <view class="choose"></view>
       </view>
-      <view>
-        <text>red 10000元</text>
-        <text>月还款</text>
+      <text class="title-range">期限范围：12-36个月</text>
+    </view>
+  </view>
+  
+  <view class="des-wrap">
+    <view class="circle-wrap">circle</view>
+    <view class="list-des">
+      <view class="item-des">
+        <view class="nail-item green"></view>
+        <view class="wrap-des">
+          <text class="money-item">10000元</text>
+          <text class="des-item">贷款金额</text>
+        </view>
+      </view>
+      <view class="item-des">
+        <view class="nail-item red"></view>
+        <view class="wrap-des">
+          <text class="money-item">30元</text>
+          <text class="des-item">总利息总利息总利息（参考月利率0.78%）</text>
+        </view>
+      </view>
+      <view class="item-des">
+        <view class="nail-item gray"></view>
+        <view class="wrap-des">
+          <text class="money-item">10000元</text>
+          <text class="des-item">月还款</text>
+        </view>
       </view>
     </view>
   </view>
 
-  <view>还款方式：等额本息</view>
+  <view class="des-foot">
+    <text>还款方式：等额本息</text>
+  </view>
 </view>
 
-<view>
-  <view>所需材料</view>
-  <view>
-    <view>
-      <view>icon</view>
-      <view>身份证</view>
-    </view>
-    <view>
-      <view>icon</view>
-      <view>信用卡</view>
-    </view>
-    <view>
-      <view>icon</view>
-      <view>手机认证</view>
-    </view>
-  </view>
-</view>
+<view class="block"></view>
 
-<view>
-  <view>
-    <text>申请条件</text>
-    <view>
-      有信用卡
+<view class="product-need padding-card">
+  <view class="product-title">所需材料</view>
+  <view class="needs">
+    <view class="need-item">
+      <view class="icon-need"></view>
+      <view class="name-need">身份证</view>
     </view>
-  </view>
-  <view>
-    <text>所需材料说明</text>
-    <view>
-      手机实名制等
+    <view class="need-item">
+      <view class="icon-need"></view>
+      <view class="name-need">信用卡</view>
     </view>
-  </view>
-  <view>
-    <text>利率说明</text>
-    <view>
-      <view>
-        <text>贷款期限</text>
-        <text>12~36期</text>
-      </view>
-      <view>
-        <text>月利率</text>
-        <text>0.78%</text>
-      </view>
+    <view class="need-item">
+      <view class="icon-need"></view>
+      <view class="name-need">手机认证</view>
     </view>
   </view>
 </view>
 
-<view>
-  <view></view>
-  <button>免费申请</button>
+<view class="block"></view>
+
+<view class="product-condition">
+  <view class="condition-card">
+    <text class="product-title">申请条件</text>
+    <view class="text-condition">
+      <text>1、有信用卡</text>
+    </view>
+  </view>
+
+  <view class="condition-card">
+    <text class="product-title">所需材料说明</text>
+    <view class="text-condition">
+      <text>手机实名制等</text>
+    </view>
+  </view>
+
+  <view class="condition-card">
+    <text class="product-title">利率说明</text>
+    <view class="rate-table">
+      <view class="rate-item">
+        <view class="name-rate">贷款期限</view>
+        <view class="count-rate">12~36期</view>
+      </view>
+      <view class="rate-item">
+        <view class="name-rate">月利率</view>
+        <view class="count-rate">0.78%</view>
+      </view>
+    </view>
+  </view>
 </view>
-<contact-button 
-  type="default-light" 
-  size="20"
-  session-from="weapp"
->免费申请
-</contact-button>
+
+<view class="block"></view>
+
+<view class="fixed-wrap">
+  <view class="left-fixed">
+    <view class="des-left">
+      <text class="text">免费</text>
+      <view class="num"><text class="count">5000</text>人申请</view>
+    </view>
+    <view id="share">分享</view>
+  </view>
+  <view id="apply">免费申请</view>
+</view>

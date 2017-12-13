@@ -1,4 +1,12 @@
 /* pages/detail/detail.wxss */
+page{
+  padding-bottom: 100rpx;
+}
+.block{
+  height: 18rpx;
+  background-color: #ccc;
+}
+
 .product-cover{
   padding: 0 30rpx;
   height: 180rpx;
@@ -28,4 +36,272 @@
 }
 .product-cover .info .des{
   font-size: 24rpx;
+}
+
+.tags{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 30rpx;
+  height: 60rpx;
+  background-color: #fff;
+  font-size: 22rpx;
+  color: orange;
+}
+.tags .tag{
+  margin-right: 30rpx;
+}
+
+.product-info{
+  padding: 40rpx 30rpx;
+}
+
+.product-info .title-wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-info .title-wrap .info-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 47%;
+}
+.product-info .title-wrap .info-title .title-name{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom:12rpx;
+  width: 100%;
+  height: 55rpx;
+  font-size: 26rpx;
+}
+.product-info .title-wrap .info-title .title-name .name{
+  width: 60rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+}
+.product-info .title-wrap .info-title .title-name .choose{
+  width: 245rpx;
+  height: 55rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 30rpx;
+}
+.product-info .title-wrap .info-title .title-range{
+  font-size: 20rpx;
+  color: #ccc;
+}
+
+.des-wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 40rpx;
+}
+.des-wrap .circle-wrap{
+  width: 47%;
+  background-color: pink;
+}
+.des-wrap .list-des{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  width: 47%;
+  height: 100%;
+}
+.des-wrap .list-des .item-des{
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.des-wrap .list-des .item-des .nail-item{
+  margin-top: 7rpx;
+  width: 20rpx;
+  height: 20rpx;
+}
+.des-wrap .list-des .item-des .green{
+  background-color: green;
+}
+.des-wrap .list-des .item-des .red{
+  background-color: red;
+}
+.des-wrap .list-des .item-des .gray{
+  background-color: gray;
+}
+.des-wrap .list-des .item-des .wrap-des{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  width: 245rpx;
+}
+.des-wrap .list-des .item-des .wrap-des .money-item{
+  margin-bottom: 8rpx;
+  font-size: 24rpx;
+}
+.des-wrap .list-des .item-des .wrap-des .des-item{
+  font-size: 20rpx;
+  color: #ccc;
+}
+
+.product-info .des-foot{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 20rpx;
+}
+.product-info .des-foot text{
+  display: block;
+  padding: 0 20rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  background-color: #ccc;
+  color: #fff;
+  border-radius: 19rpx;
+}
+.product-title{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.padding-card{
+  padding: 40rpx 30rpx;
+}
+.product-need{
+
+}
+.product-need .needs{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 44rpx;
+}
+.product-need .needs .need-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.product-need .needs .need-item .icon-need{
+  margin-bottom: 20rpx;
+  width: 38rpx;
+  height: 38rpx;
+  background-color: pink;
+}
+.product-need .needs .need-item .name-need{
+  font-size: 24rpx;
+}
+
+.product-condition{
+  padding: 0 30rpx 30rpx;
+}
+.product-condition .condition-card{
+  border-bottom: 1rpx solid #ccc;
+}
+.product-condition .condition-card:last-child{
+  border: none;
+}
+.product-condition .condition-card .product-title{
+  display: block;
+  padding-top: 40rpx;
+}
+.product-condition .condition-card .text-condition{
+  margin-top: 30rpx;
+}
+.product-condition .condition-card .text-condition text{
+  display: block;
+  margin-bottom: 30rpx;
+  font-size: 24rpx;
+}
+
+.rate-table{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-top: 35rpx;
+  border: 1rpx solid #ccc;
+  border-bottom: none;
+}
+.rate-table .rate-item{
+  width: 100%;
+  font-size: 24rpx;
+  border-right: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+  text-align: center;
+}
+.rate-table .rate-item:last-child{
+  border-right: none;
+}
+.rate-table .rate-item .name-rate{
+  padding: 20rpx 0;
+}
+.rate-table .rate-item .count-rate{
+  padding: 20rpx 0;
+  background-color: #f2f2f2;
+  color: orange;
+  border-top: 1rpx solid #ccc;
+}
+
+.fixed-wrap{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 30rpx;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  border-top: 1rpx solid #ccc;
+}
+.left-fixed{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 450rpx;
+  height: 70rpx;
+}
+.des-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70rpx;
+}
+.des-left .text{
+  font-size: 24rpx;
+  color: orange;
+}
+.des-left .num{
+  font-size: 22rpx;
+}
+.des-left .num .count{
+  color: orange;
+}
+#share{
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-right: 40rpx;
+  border-right: 1rpx solid #ccc;
+  font-size: 24rpx;
+}
+#apply{
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background-color: blue;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 32rpx;
 }

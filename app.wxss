@@ -90,7 +90,7 @@ page{
   font-size: 30rpx;
 }
 .product-item .product-info .product-name .success-count{
-  font-size: 20rpx;
+  font-size: 24rpx;
   color: #ccc;
 }
 .product-item .product-info .product-name .success-count .count{
@@ -107,12 +107,12 @@ page{
   margin-right: 10rpx;
   margin-bottom: 10rpx;
   padding: 0 10rpx;
-  height: 26rpx;
-  line-height: 26rpx;
+  height: 28rpx;
+  line-height: 28rpx;
   border: 1rpx solid orange;
-  font-size: 20rpx;
+  font-size: 24rpx;
   color: orange;
-  border-radius: 13rpx;
+  border-radius: 14rpx;
 }
 .product-item .product-info .details{
   display: flex;
@@ -130,7 +130,7 @@ page{
   align-items: flex-start;
 }
 .product-item .product-info .details .detail .detail-des{
-  font-size: 20rpx;
+  font-size: 22rpx;
   color: #ccc;
 }
 .product-item .product-info .details .detail .detail-money{
