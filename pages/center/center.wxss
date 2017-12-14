@@ -7,17 +7,21 @@ page{
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 30rpx 0;
+  padding: 30rpx 0 50rpx;
   height: 220rpx;
   background-color: #666;
 }
-#avator{
+.avator{
+  padding: 0;
   width: 140rpx;
   height: 140rpx;
   border-radius: 50%;
-  background-color: #fff;
 }
-#userName{
+.avator image{
+  width: 140rpx;
+  height: 140rpx;
+}
+.userName{
   color: #fff;
   font-size: 28rpx;
 }

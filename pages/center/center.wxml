@@ -1,8 +1,17 @@
 <!--pages/center/center.wxml-->
 <view id="userWrap">
-  <view id="avator"></view>
-  <view id="userName">NXY</view>
+{{hasUserInfo}}
+  <button wx:if="{{hasUserInfo}}" open-type="getUserInfo" class="avator" bindtap="getSetting">
+    <image src="{{userInfo.avatarUrl}}" mode="scaleToFill" background-size="cover"></image>
+  </button> 
+  <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" class="avator" bindtap="getSetting">
+    <image src="../../images/profle.png" mode="scaleToFill" background-size="cover"></image>
+  </button>
+  <view wx:if="{{!hasUserInfo}}" class="userName">暂未授权</view>
+  <view wx:if="{{hasUserInfo}}" class="userName">{{userInfo.nickName}}</view>  
 </view>
+  
+
 
 <view id="bindPhoneWrap">
   <view class="cover"></view>
@@ -15,13 +24,14 @@
 </view>
 
 <view id="menu">
-  <view class="menu-item">
+  <view class="menu-item" bindtap="showAction">
     <view class="menu-icon"></view>
     <view class="menu-name">
       <text class="name">客服电话</text>
       <text class="arrow"></text>
     </view>
   </view>
+  
   <view class="menu-item">
     <view class="menu-icon"></view>
     <view class="menu-name">
@@ -30,3 +40,7 @@
     </view>
   </view>
 </view>
+
+<!-- <action-sheet hidden="{{actionSheetHidden}}">
+  <action-sheet-cancel>取消</action-sheet-cancel>
+</action-sheet> -->
