@@ -1,10 +1,9 @@
 <!--pages/center/center.wxml-->
 <view id="userWrap">
-{{hasUserInfo}}
-  <button wx:if="{{hasUserInfo}}" open-type="getUserInfo" class="avator" bindtap="getSetting">
+  <button wx:if="{{hasUserInfo}}" class="avator" bindtap="getSetting">
     <image src="{{userInfo.avatarUrl}}" mode="scaleToFill" background-size="cover"></image>
   </button> 
-  <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" class="avator" bindtap="getSetting">
+  <button wx:if="{{!hasUserInfo}}" class="avator" bindtap="getSetting">
     <image src="../../images/profle.png" mode="scaleToFill" background-size="cover"></image>
   </button>
   <view wx:if="{{!hasUserInfo}}" class="userName">暂未授权</view>

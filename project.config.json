@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.6.6",
 	"appid": "wx511dbbfcf192f02c",
-	"projectname": "wallet",
+	"projectname": "public_wallet",
 	"condition": {
 		"search": {
 			"current": -1,

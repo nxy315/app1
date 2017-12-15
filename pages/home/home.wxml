@@ -74,6 +74,51 @@
       </view>
       <view class="apply">申请</view>
     </view>
+    <view class="item" data-id="1" bindtap="toDetail">
+      <view class="cover"></view>
+      <view class="detail">
+        <view class="name">
+          <view>即速贷</view>
+          <view class="tail">
+            <text class="time">3分钟</text>
+            <text class="fk">放款</text>
+          </view>
+        </view>
+        <view class="count">1万-20万/1000人申请</view>
+        <view class="info">因为专业，所以恒久因为专业，所以</view>
+      </view>
+      <view class="apply">申请</view>
+    </view>
+    <view class="item" data-id="1" bindtap="toDetail">
+      <view class="cover"></view>
+      <view class="detail">
+        <view class="name">
+          <view>即速贷</view>
+          <view class="tail">
+            <text class="time">3分钟</text>
+            <text class="fk">放款</text>
+          </view>
+        </view>
+        <view class="count">1万-20万/1000人申请</view>
+        <view class="info">因为专业，所以恒久因为专业，所以</view>
+      </view>
+      <view class="apply">申请</view>
+    </view>
+    <view class="item" data-id="1" bindtap="toDetail">
+      <view class="cover"></view>
+      <view class="detail">
+        <view class="name">
+          <view>即速贷</view>
+          <view class="tail">
+            <text class="time">3分钟</text>
+            <text class="fk">放款</text>
+          </view>
+        </view>
+        <view class="count">1万-20万/1000人申请</view>
+        <view class="info">因为专业，所以恒久因为专业，所以</view>
+      </view>
+      <view class="apply">申请</view>
+    </view>
     
   </view>
 </view>
@@ -87,6 +132,66 @@
   </view>
 
   <view class="list">
+    <view class="item" data-id="1" bindtap="toDetail">
+      <view class="cover"></view>
+      <view class="detail">
+        <view class="name">
+          <view>即速贷</view>
+          <view class="tail">
+            <text class="time">3分钟</text>
+            <text class="fk">放款</text>
+          </view>
+        </view>
+        <view class="count">1万-20万/1000人申请</view>
+        <view class="info">因为专业，所以恒久因为专业，所以</view>
+      </view>
+      <view class="apply">申请</view>
+    </view>
+    <view class="item" data-id="1" bindtap="toDetail">
+      <view class="cover"></view>
+      <view class="detail">
+        <view class="name">
+          <view>即速贷</view>
+          <view class="tail">
+            <text class="time">3分钟</text>
+            <text class="fk">放款</text>
+          </view>
+        </view>
+        <view class="count">1万-20万/1000人申请</view>
+        <view class="info">因为专业，所以恒久因为专业，所以</view>
+      </view>
+      <view class="apply">申请</view>
+    </view>
+    <view class="item" data-id="1" bindtap="toDetail">
+      <view class="cover"></view>
+      <view class="detail">
+        <view class="name">
+          <view>即速贷</view>
+          <view class="tail">
+            <text class="time">3分钟</text>
+            <text class="fk">放款</text>
+          </view>
+        </view>
+        <view class="count">1万-20万/1000人申请</view>
+        <view class="info">因为专业，所以恒久因为专业，所以</view>
+      </view>
+      <view class="apply">申请</view>
+    </view>
+    <view class="item" data-id="1" bindtap="toDetail">
+      <view class="cover"></view>
+      <view class="detail">
+        <view class="name">
+          <view>即速贷</view>
+          <view class="tail">
+            <text class="time">3分钟</text>
+            <text class="fk">放款</text>
+          </view>
+        </view>
+        <view class="count">1万-20万/1000人申请</view>
+        <view class="info">因为专业，所以恒久因为专业，所以</view>
+      </view>
+      <view class="apply">申请</view>
+    </view>
     <view class="item" data-id="1" bindtap="toDetail">
       <view class="cover"></view>
       <view class="detail">

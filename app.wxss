@@ -15,17 +15,17 @@ page{
 
 /* 精选贷款专题 */
 .topic{
-  padding: 36rpx 0 40rpx;
+  padding: 40rpx 0 40rpx;
   background-color: white;
 }
 .topic .head{
   margin-bottom: 40rpx;
   padding-left: 24rpx;
-  font-size: 30rpx;
+  font-size: 34rpx;
   font-weight: bold;
 }
 .topic .cards{
-  height: 140rpx;
+  height: 160rpx;
   white-space: nowrap;  
 }
 .topic .cards .card-wrap{
@@ -41,18 +41,18 @@ page{
   justify-content: center;
   align-items: center;
   width: 320rpx;
-  height: 140rpx;
+  height: 160rpx;
   background-color: pink;
   color: white;
   border-radius: 6rpx;
 }
 .topic .cards .card-wrap .card .title{
   margin-bottom: 6rpx;
-  font-size: 28rpx;
+  font-size: 32rpx;
   font-weight: bold;
 }
 .topic .cards .card-wrap .card .des{
-  font-size: 20rpx;
+  font-size: 22rpx;
 }
 
 /* 产品列表页 */
@@ -62,7 +62,7 @@ page{
   justify-content: space-between;
   padding: 24rpx;
   font-size: 24rpx;
-  border-bottom: 1rpx solid #ccc;
+  border-bottom: 2rpx solid #dcdcdc;
   background-color: #fff;
 }
 .product-item:last-child{
@@ -87,14 +87,14 @@ page{
   line-height: 40rpx;
 }
 .product-item .product-info .product-name .name{
-  font-size: 30rpx;
+  font-size: 34rpx;
 }
 .product-item .product-info .product-name .success-count{
-  font-size: 24rpx;
-  color: #ccc;
+  font-size: 22rpx;
+  color: #999;
 }
 .product-item .product-info .product-name .success-count .count{
-  color: red;
+  color: #fa5f22;
 }
 .product-item .product-info .tags{
   display: flex;
@@ -106,13 +106,13 @@ page{
 .product-item .product-info .tags .tag{
   margin-right: 10rpx;
   margin-bottom: 10rpx;
-  padding: 0 10rpx;
-  height: 28rpx;
-  line-height: 28rpx;
-  border: 1rpx solid orange;
-  font-size: 24rpx;
-  color: orange;
-  border-radius: 14rpx;
+  padding: 0 15rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  border: 2rpx solid #fa5f22;
+  font-size: 26rpx;
+  color: #fa5f22;
+  border-radius: 18rpx;
 }
 .product-item .product-info .details{
   display: flex;
@@ -131,9 +131,9 @@ page{
 }
 .product-item .product-info .details .detail .detail-des{
   font-size: 22rpx;
-  color: #ccc;
+  color: #999;
 }
 .product-item .product-info .details .detail .detail-money{
-  font-size: 24rpx;
+  font-size: 26rpx;
   font-weight: bold;
 }

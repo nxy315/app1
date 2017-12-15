@@ -34,7 +34,9 @@
   </view>
   
   <view class="des-wrap">
-    <view class="circle-wrap">circle</view>
+    <view class="circle-box">
+      
+    </view>
     <view class="list-des">
       <view class="item-des">
         <view class="nail-item green"></view>
@@ -92,6 +94,8 @@
     <text class="product-title">申请条件</text>
     <view class="text-condition">
       <text>1、有信用卡</text>
+      <text>2、有身份证</text>
+      <text>3、手机认证</text>
     </view>
   </view>
 

@@ -1,12 +1,14 @@
 /* pages/info/info.wxss */
 page{
-  background-color: #f2f2f2;
+  padding: 100rpx 0 35rpx;
+  background-color: #f1f3f4;
 }
 #infoForm{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 100rpx 35rpx 0;
+  margin: 0 auto;
+  /* margin: 100rpx 35rpx 0; */
   padding: 0 0 40rpx;
   width: 680rpx;
   background-color: #fff;
@@ -17,26 +19,29 @@ page{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  border-bottom: 1rpx solid #ccc;
+  border-bottom: 2rpx solid #cfcfcf;
   width: 620rpx;
-  height: 80rpx;
-  line-height: 80rpx;
-  font-size: 24rpx;
-  color: #333;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #887f7f;
 }
 #infoForm .form-item .form-name{
-  width: 150rpx;
+  width: 180rpx;
 }
 #infoForm .form-item .form-content{}
 #submit{
   margin-top: 40rpx;
   width: 620rpx;
-  height: 70rpx;
-  line-height: 70rpx;
+  height: 100rpx;
+  line-height: 100rpx;
   text-align: center;
-  background-color: red;
-  font-size: 28rpx;
+  background-color: #ce2222;
+  font-size: 34rpx;
   color: #fff;
+}
+#submit:active{
+  background-color: #e35959;
 }
 
 
@@ -56,11 +61,11 @@ page{
 }
 .foot-des .foot-item .foot-time{
   margin-bottom: 10rpx;
-  font-size: 24rpx;
+  font-size: 28rpx;
 }
 .foot-des .foot-item .foot-info{
-  font-size: 20rpx;
-  color: #ccc;
+  font-size: 22rpx;
+  color: #999;
 }
 .foot-des .arrow{
   margin: 0 50rpx;

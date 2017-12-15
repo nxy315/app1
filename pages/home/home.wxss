@@ -1,6 +1,6 @@
 /* pages/home/home.wxss */
 #fastEnter{
-  height: 160rpx;
+  height: 210rpx;
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -16,42 +16,42 @@
   align-items: center;
 }
 #fastEnter .icon{
-  margin-bottom: 5px;
-  width: 35px;
-  height: 35px;
+  margin-bottom: 8px;
+  width: 90rpx;
+  height: 90rpx;
   background-color: pink;
   border-radius: 50%;
 }
 #fastEnter .des{
-
+  font-size: 28rpx;
 }
 
 .block{
   height: 20rpx;
-  background-color: #ccc;
+  background-color: #f1f3f4;
 }
 
 .hot-list{
-  padding: 20rpx 24rpx 40rpx;
+  padding: 40rpx 24rpx 40rpx;
   background-color: #fff;
 }
 .hot-list:last-child{
   margin: 0;
 }
 .hot-list .hot-title{
-  margin-bottom: 20rpx;
+  margin-bottom: 40rpx;
   height: 100rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .hot-list .hot-title .title{
-  font-size: 30rpx;
+  font-size: 34rpx;
   font-weight: bold;
 }
 .hot-list .hot-title .des{
-  font-size: 20rpx;
-  color: #ccc;
+  font-size: 26rpx;
+  color: #6e7f8c;
 }
 
 .list{
@@ -62,7 +62,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 60rpx;
+  margin-bottom: 80rpx;
   height: 120rpx;
 }
 .list .item:last-child{
@@ -76,7 +76,7 @@
 }
 .list .item .detail{
   width: 410rpx;
-  height: 120rpx;
+  height: 130rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -86,12 +86,12 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  font-size: 30rpx;
+  font-size: 34rpx;
 }
 .list .item .detail .name .tail{
   margin-left: 10rpx;
   font-size: 18rpx;
-  border: 1px solid #ccc;
+  border: 1px solid #66a7cd;
   border-radius: 5rpx;
 }
 .list .item .detail .name .tail text{
@@ -100,32 +100,32 @@
   line-height: 20rpx;
 }
 .list .item .detail .name .tail .time{
-  background-color: #ccc;
+  background-color: #66a7cd;
   color: white;  
 }
 .list .item .detail .name .tail .fk{
-  color: gray;
+  color: #66a7cd;
 }
 .list .item .detail .count{
-  font-size: 24rpx;
-  color: orange;
+  font-size: 26rpx;
+  color: #fa5f22;
 }
 .list .item .detail .info{
   font-size: 24rpx;
-  color: #ccc;
+  color: #999;
 }
 .list .item .apply{
   width: 120rpx;
   height: 50rpx;
   line-height: 50rpx;
   text-align: center;
-  font-size: 24rpx;
+  font-size: 26rpx;
   background-color: white;
-  color: orange;
-  border: 1rpx solid orange;
+  color: #fa5f22;
+  border: 2rpx solid #fa5f22;
   border-radius: 6rpx;
 }
 .list .item .apply:active{
   color: #fff;
-  background-color: orange;
+  background-color: #fa5f22;
 }
