@@ -1,6 +1,9 @@
 <!--pages/detail/detail.wxml-->
 <view class="product-cover">
-  <view class="cover">cover</view>
+  <image class="cover-bg" mode="aspectFill" src="../../images/detail_bg.png"></image>
+  <view class="cover">
+    <image src="../../images/starbucks.jpg"></image>
+  </view>
   <view class="info">
     <text class="name">宜人贷</text>
     <text class="des">在线申请，批核速度快，申请模式多样。</text>
@@ -8,9 +11,18 @@
 </view>
 
 <view class="tags">
-  <view class="tag">在线申请</view>
-  <view class="tag">批核速度快</view>
-  <view class="tag">申请模式多样</view>
+  <view class="tag">
+    <image src="../../images/success.png"></image>
+    在线申请
+  </view>
+  <view class="tag">
+    <image src="../../images/success.png"></image>
+    批核速度快
+  </view>
+  <view class="tag">
+    <image src="../../images/success.png"></image>
+    申请模式多样
+  </view>
 </view>
 
 <view class="block"></view>
@@ -73,15 +85,16 @@
   <view class="product-title">所需材料</view>
   <view class="needs">
     <view class="need-item">
-      <view class="icon-need"></view>
+      <image class="icon-need" src="../../images/businesscard_fill.png"></image>
+      <!-- <view class="icon-need"></view> -->
       <view class="name-need">身份证</view>
     </view>
     <view class="need-item">
-      <view class="icon-need"></view>
+      <image class="icon-need" src="../../images/coupons_fill.png"></image>
       <view class="name-need">信用卡</view>
     </view>
     <view class="need-item">
-      <view class="icon-need"></view>
+      <image class="icon-need" src="../../images/mobilephone_fill.png"></image>
       <view class="name-need">手机认证</view>
     </view>
   </view>
@@ -129,7 +142,10 @@
       <text class="text">免费</text>
       <view class="num"><text class="count">5000</text>人申请</view>
     </view>
-    <view id="share">分享</view>
+    <button id="share" open-type="share" hover-class="btn-hover">
+      <image src="../../images/share_fill.png"></image>
+      分享
+    </button>
   </view>
   <view id="apply">免费申请</view>
 </view>

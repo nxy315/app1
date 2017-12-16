@@ -22,26 +22,26 @@
       {
         "text": "首页",
         "pagePath": "pages/home/home",
-        "iconPath": "images/send.png",
-        "selectedIconPath": "images/send_active.png"
+        "iconPath": "images/homepage.png",
+        "selectedIconPath": "images/homepage_fill.png"
       },
       {
         "text": "贷款超市",
         "pagePath": "pages/list/list",
-        "iconPath": "images/contacts.png",
-        "selectedIconPath": "images/contacts_active.png"
+        "iconPath": "images/order.png",
+        "selectedIconPath": "images/order_fill.png"
       },
       {
         "text": "一定借到钱",
         "pagePath": "pages/info/info",
-        "iconPath": "images/template.png",
-        "selectedIconPath": "images/template_active.png"
+        "iconPath": "images/flashlight.png",
+        "selectedIconPath": "images/flashlight_fill.png"
       },
       {
         "text": "我的",
         "pagePath": "pages/center/center",
-        "iconPath": "images/account.png",
-        "selectedIconPath": "images/account_active.png"
+        "iconPath": "images/people.png",
+        "selectedIconPath": "images/people_fill.png"
       }
     ]
   }

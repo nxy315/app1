@@ -1,29 +1,30 @@
 <!--pages/list/list.wxml-->
 <view id="filterWrap">
   <view class="fixed-filter">
-    <view class="filter active">
-      额度不限
+    <view wx:for="{{filter}}" wx:key="{{index}}" data-index="{{index}}" class="{{filterIndex == index ? 'filter active' : 'filter'}}" bindtap="tapFilter">
+      {{item}}
+      <view class="{{filterIndex == index ? 'triangle down' : 'triangle up'}}"></view>
     </view>
-    <view class="filter">
-      资料不限
-    </view>
-    <view class="filter">
-      期限不限
-    </view>
+    
   </view>
-  <view class="filter-list">
-    <view class="list-item active">额度不限</view>
-    <view class="list-item">1万以下</view>
-    <view class="list-item">1万~5万</view>
-    <view class="list-item">5万以上</view>
+  <view class="filter-list" wx:if="{{filterIndex == 0}}">
+    <view wx:for="{{quotaData}}" wx:key="{{index}}" data-index="{{index}}" data-title="{{item.title}}" bindtap="chooseQuota" class="{{quotaIndex == index ? 'list-item active' : 'list-item'}}">{{item.title}}</view>
   </view>
-  <view id="mask"></view>
+  <view class="filter-list" wx:if="{{filterIndex == 1}}">
+    <view wx:for="{{fileData}}" wx:key="{{index}}" data-index="{{index}}" data-title="{{item.title}}" bindtap="chooseFile" class="{{fileIndex == index ? 'list-item active' : 'list-item'}}">{{item.title}}</view>
+  </view>
+  <view class="filter-list" wx:if="{{filterIndex == 2}}">
+    <view wx:for="{{termData}}" wx:key="{{index}}" data-index="{{index}}" data-title="{{item.title}}" bindtap="chooseTerm" class="{{termIndex == index ? 'list-item active' : 'list-item'}}">{{item.title}}</view>
+  </view>
+  <view id="mask" wx:if="{{filterIndex != -1}}" bindtap="maskHide"></view>
 </view>
 
 <view class="much">共找到100款适合您的产品</view>
 
 <view class="product-item" data-id="1" bindtap="toDetail">
-  <view class="product-cover"></view>
+  <view class="product-cover">
+    <image src="../../images/starbucks.jpg"></image>
+  </view>
   <view class="product-info">
     <view class="product-name">
       <text class="name">宜人贷</text>
@@ -59,7 +60,9 @@
   </view>
 </view>
 <view class="product-item" data-id="1" bindtap="toDetail">
-  <view class="product-cover"></view>
+  <view class="product-cover">
+    <image src="../../images/starbucks.jpg"></image>
+  </view>
   <view class="product-info">
     <view class="product-name">
       <text class="name">宜人贷</text>
@@ -95,7 +98,9 @@
   </view>
 </view>
 <view class="product-item" data-id="1" bindtap="toDetail">
-  <view class="product-cover"></view>
+  <view class="product-cover">
+    <image src="../../images/starbucks.jpg"></image>
+  </view>
   <view class="product-info">
     <view class="product-name">
       <text class="name">宜人贷</text>
@@ -131,7 +136,9 @@
   </view>
 </view>
 <view class="product-item" data-id="1" bindtap="toDetail">
-  <view class="product-cover"></view>
+  <view class="product-cover">
+    <image src="../../images/starbucks.jpg"></image>
+  </view>
   <view class="product-info">
     <view class="product-name">
       <text class="name">宜人贷</text>

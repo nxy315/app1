@@ -1,4 +1,5 @@
 // pages/home/home.js
+var app = getApp();
 Page({
 
   /**
@@ -22,8 +23,9 @@ Page({
     var id = e.currentTarget.dataset.id;
 
     if (id != "4") {
+      app.globalData.listParams = id;
       wx.switchTab({
-        url: '../list/list?id=' + id,
+        url: '../list/list',
       })
     } else {
       wx.switchTab({

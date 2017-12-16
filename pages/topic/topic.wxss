@@ -8,6 +8,7 @@ page{
 }
 
 .topic-cover{
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,16 +16,29 @@ page{
   height: 240rpx;
   background-color: pink;
   color: #fff;
+  overflow: hidden;
+}
+.topic-cover image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 240rpx;
+  z-index: 1;
 }
 .topic-cover .topic-title{
+  position: relative;
   margin-bottom: 20rpx;
   font-size: 34rpx;
   font-weight: bold;
   /* text-shadow: 0px 10rpx 30rpx #3d3d3d; */
   text-shadow: 0 8rpx 28rpx #ccc;
+  z-index: 2;
 }
 .topic-cover .topic-des{
+  position: relative;
   font-size: 26rpx;
+  z-index: 2;
 }
 
 .suggest{

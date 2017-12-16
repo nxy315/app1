@@ -1,19 +1,27 @@
 <!--pages/home/home.wxml-->
 <view id="fastEnter">
   <view class="enter" data-id="1" bindtap="toList">
-    <view class="icon"></view>
+    <view class="icon icon1">
+      <image src="../../images/money1.png"></image>
+    </view>
     <view class="des">1万以下</view>
   </view>
   <view class="enter" data-id="2" bindtap="toList">
-    <view class="icon"></view>
+    <view class="icon icon2">
+      <image src="../../images/money2.png"></image>
+    </view>
     <view class="des">1万~5万</view>
   </view>
   <view class="enter" data-id="3" bindtap="toList">
-    <view class="icon"></view>
+    <view class="icon icon3">
+      <image src="../../images/sponsor_fill.png"></image>
+    </view>
     <view class="des">5万以上</view>
   </view>
   <view class="enter" data-id="4" bindtap="toList">
-    <view class="icon"></view>
+    <view class="icon icon4">
+      <image src="../../images/hot_fill.png"></image>
+    </view>
     <view class="des">急用钱</view>
   </view>
 </view>
@@ -25,24 +33,28 @@
   <scroll-view scroll-x="true" class="cards">
     <view class="card-wrap">
       <view class="card" data-id="1" bindtap="toTopic">
+        <image src="../../images/bg1.png"></image>
         <view class="title">芝麻分就能借</view>
         <view class="des">秒下5000不剁手</view>
       </view>
     </view>
     <view class="card-wrap">
       <view class="card" data-id="1" bindtap="toTopic">
+        <image src="../../images/bg2.png"></image>
         <view class="title">芝麻分就能借</view>
         <view class="des">秒下5000不剁手</view>
       </view>
     </view>
     <view class="card-wrap">
       <view class="card" data-id="1" bindtap="toTopic">
+        <image src="../../images/bg3.png"></image>
         <view class="title">芝麻分就能借</view>
         <view class="des">秒下5000不剁手</view>
       </view>
     </view>
     <view class="card-wrap">
       <view class="card" data-id="1" bindtap="toTopic">
+        <image src="../../images/bg4.png"></image>
         <view class="title">芝麻分就能借</view>
         <view class="des">秒下5000不剁手</view>
       </view>
@@ -60,7 +72,9 @@
 
   <view class="list">
     <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover"></view>
+      <view class="cover">
+        <image src="../../images/starbucks.jpg"></image>
+      </view>
       <view class="detail">
         <view class="name">
           <view>即速贷</view>
@@ -75,7 +89,9 @@
       <view class="apply">申请</view>
     </view>
     <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover"></view>
+      <view class="cover">
+        <image src="../../images/starbucks.jpg"></image>
+      </view>
       <view class="detail">
         <view class="name">
           <view>即速贷</view>
@@ -90,7 +106,9 @@
       <view class="apply">申请</view>
     </view>
     <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover"></view>
+      <view class="cover">
+        <image src="../../images/starbucks.jpg"></image>
+      </view>
       <view class="detail">
         <view class="name">
           <view>即速贷</view>
@@ -105,7 +123,9 @@
       <view class="apply">申请</view>
     </view>
     <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover"></view>
+      <view class="cover">
+        <image src="../../images/starbucks.jpg"></image>
+      </view>
       <view class="detail">
         <view class="name">
           <view>即速贷</view>
@@ -119,7 +139,6 @@
       </view>
       <view class="apply">申请</view>
     </view>
-    
   </view>
 </view>
 
@@ -133,7 +152,9 @@
 
   <view class="list">
     <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover"></view>
+      <view class="cover">
+        <image src="../../images/starbucks.jpg"></image>
+      </view>
       <view class="detail">
         <view class="name">
           <view>即速贷</view>
@@ -148,7 +169,9 @@
       <view class="apply">申请</view>
     </view>
     <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover"></view>
+      <view class="cover">
+        <image src="../../images/starbucks.jpg"></image>
+      </view>
       <view class="detail">
         <view class="name">
           <view>即速贷</view>
@@ -163,7 +186,9 @@
       <view class="apply">申请</view>
     </view>
     <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover"></view>
+      <view class="cover">
+        <image src="../../images/starbucks.jpg"></image>
+      </view>
       <view class="detail">
         <view class="name">
           <view>即速贷</view>
@@ -178,7 +203,9 @@
       <view class="apply">申请</view>
     </view>
     <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover"></view>
+      <view class="cover">
+        <image src="../../images/starbucks.jpg"></image>
+      </view>
       <view class="detail">
         <view class="name">
           <view>即速贷</view>
@@ -193,7 +220,9 @@
       <view class="apply">申请</view>
     </view>
     <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover"></view>
+      <view class="cover">
+        <image src="../../images/starbucks.jpg"></image>
+      </view>
       <view class="detail">
         <view class="name">
           <view>即速贷</view>

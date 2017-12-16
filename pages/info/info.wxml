@@ -1,4 +1,6 @@
 <!--pages/info/info.wxml-->
+<!-- <image class="info-bg" mode="aspectFill" src="../../images/info_bg.png"></image> -->
+
 <view id="infoForm">
   <view class="form-item">
     <view class="form-name">您的姓名</view>
@@ -36,12 +38,16 @@
     <text class="foot-time">1分钟</text>
     <text class="foot-info">提交贷款需求</text>
   </view>
-  <view class="arrow"></view>
+  <view class="arrow">
+    <image src="../../images/enter.png"></image>
+  </view>
   <view class="foot-item">
     <text class="foot-time">10分钟</text>
     <text class="foot-info">顾问电话沟通</text>
   </view>
-  <view class="arrow"></view>
+  <view class="arrow">
+    <image src="../../images/enter.png"></image>
+  </view>
   <view class="foot-item">
     <text class="foot-time">1小时</text>
     <text class="foot-info">搞定贷款难题</text>

@@ -16,11 +16,31 @@
   align-items: center;
 }
 #fastEnter .icon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 8px;
   width: 90rpx;
   height: 90rpx;
-  background-color: pink;
   border-radius: 50%;
+}
+#fastEnter .icon1{
+  background: -webkit-linear-gradient(top, #7cd58c, #57bb69);
+}
+#fastEnter .icon2{
+  background: -webkit-linear-gradient(top, #ede97b, #dcd753);
+}
+#fastEnter .icon3{
+  background: -webkit-linear-gradient(top, #ec82aa, #dc5286);
+}
+#fastEnter .icon4{
+  background: -webkit-linear-gradient(top, #a1a7da, #505ec5);
+}
+
+#fastEnter .icon image{
+  width: 55rpx;
+  height: 55rpx;
 }
 #fastEnter .des{
   font-size: 28rpx;
@@ -73,6 +93,10 @@
   height: 120rpx;
   border-radius: 6rpx;
   border: 1rpx solid #ccc;
+}
+.list .item .cover image{
+  width: 120rpx;
+  height: 120rpx;
 }
 .list .item .detail{
   width: 410rpx;

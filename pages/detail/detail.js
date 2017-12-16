@@ -43,23 +43,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var c = document.getElementById('myCanvas');
-    var ctx = c.getContext('2d');
+    // var c = document.getElementById('myCanvas');
+    // var ctx = c.getContext('2d');
 
-    var mW = c.width = 300;
-    var mH = c.height = 300;
-    var lineWidth = 5;
-    var r = mW / 2; //中间位置
-    var cR = r - 4 * lineWidth; //圆半径
-    var startAngle = -(1 / 2 * Math.PI); //开始角度
-    var endAngle = startAngle + 2 * Math.PI; //结束角度
-    var xAngle = 1 * (Math.PI / 180); //偏移角度量
-    var fontSize = 35; //字号大小
-    var tmpAngle = startAngle; //临时角度变量
+    // var mW = c.width = 300;
+    // var mH = c.height = 300;
+    // var lineWidth = 5;
+    // var r = mW / 2; //中间位置
+    // var cR = r - 4 * lineWidth; //圆半径
+    // var startAngle = -(1 / 2 * Math.PI); //开始角度
+    // var endAngle = startAngle + 2 * Math.PI; //结束角度
+    // var xAngle = 1 * (Math.PI / 180); //偏移角度量
+    // var fontSize = 35; //字号大小
+    // var tmpAngle = startAngle; //临时角度变量
 
-    //渲染函数
+    // //渲染函数
     
-    this.rander();
+    // this.rander();
   },
 
   /**

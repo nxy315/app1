@@ -36,11 +36,19 @@ page{
   background-color: #fff;
 }
 #bindPhoneWrap .cover{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-right: 10rpx;
   width: 60rpx;
   height: 60rpx;
-  background-color: pink;
+  background-color: #f2f2e9;
   border-radius: 50%;
+}
+#bindPhoneWrap .cover image{
+  width: 44rpx;
+  height: 44rpx;
 }
 #bindPhoneWrap .phone{
   display: flex;
@@ -80,9 +88,27 @@ page{
   height: 120rpx;
 }
 #menu .menu-item .menu-icon{
-  width: 30rpx;
-  height: 30rpx;
-  background-color: pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 35rpx;
+  height: 35rpx;
+}
+#menu .menu-item .menu-icon image{
+  width: 35rpx;
+  height: 35rpx;
+}
+.kfbtn{
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border: none;
+  font-size: 28rpx;
+}
+.kfbtn:after{
+  width: auto;
+  height: auto;
 }
 #menu .menu-item .menu-name{
   display: flex;
@@ -98,7 +124,6 @@ page{
 }
 #menu .menu-item .menu-name .name{}
 #menu .menu-item .menu-name .arrow{
-  width: 20rpx;
-  height: 40rpx;
-  background-color: pink;
+  width: 44rpx;
+  height: 44rpx;
 }

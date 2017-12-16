@@ -3,7 +3,17 @@ page{
   padding: 100rpx 0 35rpx;
   background-color: #f1f3f4;
 }
+.info-bg{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 #infoForm{
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +23,7 @@ page{
   width: 680rpx;
   background-color: #fff;
   border-radius: 16rpx;
-  box-shadow: 0 8rpx 28rpx 4rpx #ccc;
+  box-shadow: 0 8rpx 58rpx 4rpx #696967;
 }
 #infoForm .form-item{
   display: flex;
@@ -47,6 +57,8 @@ page{
 
 
 .foot-des{
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -69,7 +81,11 @@ page{
 }
 .foot-des .arrow{
   margin: 0 50rpx;
-  width: 20rpx;
+  width: 40rpx;
   height: 40rpx;
-  background-color: pink;
+}
+
+.foot-des .arrow image{
+  width: 40rpx;
+  height: 40rpx;
 }
