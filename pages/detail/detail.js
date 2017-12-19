@@ -1,4 +1,6 @@
 // pages/detail/detail.js
+var wxCharts = require('../../utils/wxcharts.js');
+var timer = null;
 Page({
 
   /**
@@ -7,29 +9,88 @@ Page({
   data: {
   
   },
-  rander: function () {
-    if (tmpAngle >= endAngle) {
-      return;
-    } else if (tmpAngle + xAngle > endAngle) {
-      tmpAngle = endAngle;
-    } else {
-      tmpAngle += xAngle;
-    }
-    ctx.clearRect(0, 0, mW, mH);
+  draw: function() {
+    // const ctx = wx.createCanvasContext('myCanvas')
+    // var i = -0.5;
+    // var count = 0.01;
+   
+    // timer = setInterval(function () {
+      // if (i <= 1) {
+        // ctx.beginPath()
+        // ctx.arc(85, 65, 50, 1.4 * Math.PI, 1.5 * Math.PI)
+        // ctx.setLineWidth(12)
+        // ctx.setStrokeStyle('#ff856d')
+        // ctx.stroke()
+        // ctx.beginPath()
+        // ctx.arc(85, 65, 50, 0, 1.4*Math.PI)                                                                                                                                                                                                                                                                        
+        // ctx.setLineWidth(13)
+        // ctx.setStrokeStyle('#32ccaa')
+        // ctx.stroke()
+        
+        // ctx.draw()
 
-    //画圈
-    ctx.beginPath();
-    ctx.lineWidth = lineWidth;
-    ctx.strokeStyle = '#1c86d1';
-    ctx.arc(r, r, cR, startAngle, tmpAngle);
-    ctx.stroke();
-    ctx.closePath();
+        // ctx.beginPath()
+        // ctx.arc(85, 65, 50, -0.5* Math.PI, 0)
+        // ctx.setLineWidth(12)
+        // ctx.setStrokeStyle('yellow')
+        // ctx.stroke()
+        // ctx.draw()
+      // }
+      // count = count * 1.05
+      // i += count
+    // }, 20)
+    
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let windowWidth = 320;
+    try {
+      let res = wx.getSystemInfoSync();
+      windowWidth = res.windowWidth;
+    } catch (e) {
+      // do something when get system info failed
+    }
+
+    new wxCharts({
+      canvasId: 'myCanvas',
+      type: 'ring',
+      title: {
+        name: '500元',
+        color: '#999999',
+        fontSize: 10
+      },
+      subtitle: {
+        name: '总还款',
+        color: '#999999',
+        fontSize: 10
+      },
+      series: [{
+        name: '1',
+        data: 1000,
+        color: '#32ccaa',
+        stroke: false
+      }, {
+        name: '2',
+        data: 50,
+        color: '#ff856d',
+        stroke: false
+      }],
+      disablePieStroke: true,
+      width: windowWidth/2,
+      height: windowWidth / 2,
+      left: 0,
+      top: 0,
+      legend: false,
+      dataLabel: false,
+      extra: {
+        ringWidth: windowWidth/24,
+        pie: {
+          offsetAngle: -90,
+        }
+      }
+    })
   },
 
   /**
@@ -43,23 +104,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // var c = document.getElementById('myCanvas');
-    // var ctx = c.getContext('2d');
-
-    // var mW = c.width = 300;
-    // var mH = c.height = 300;
-    // var lineWidth = 5;
-    // var r = mW / 2; //中间位置
-    // var cR = r - 4 * lineWidth; //圆半径
-    // var startAngle = -(1 / 2 * Math.PI); //开始角度
-    // var endAngle = startAngle + 2 * Math.PI; //结束角度
-    // var xAngle = 1 * (Math.PI / 180); //偏移角度量
-    // var fontSize = 35; //字号大小
-    // var tmpAngle = startAngle; //临时角度变量
-
-    // //渲染函数
-    
-    // this.rander();
+    this.draw();
   },
 
   /**

@@ -132,7 +132,6 @@ page{
 }
 .des-wrap .circle-box{
   width: 47%;
-  background-color: pink;
 }
 .des-wrap .list-des{
   display: flex;
@@ -356,4 +355,15 @@ page{
 }
 #apply:active{
   background-color: #7d87d7;
+}
+
+#myCanvas{
+  display: block;
+}
+.canvas{
+  margin-left: -2vw;
+  margin-top: -6vw;
+  width: 100vw;
+  height: 50vw;
+  /* transform: rotate(-90deg); */
 }
