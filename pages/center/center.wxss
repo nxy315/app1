@@ -116,12 +116,14 @@ page{
   justify-content: space-between;
   align-items: center;
   width: 630rpx;
-  height: 120rpx;
+  height: 119rpx;
+}
+.border-b{
   border-bottom: 2rpx solid #f1f3f4;
 }
-#menu .menu-item:last-child .menu-name{
+/* #menu .menu-item:last-child .menu-name{
   border: none;
-}
+} */
 #menu .menu-item .menu-name .name{}
 #menu .menu-item .menu-name .arrow{
   width: 44rpx;

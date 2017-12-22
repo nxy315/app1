@@ -27,9 +27,9 @@
 <view id="menu">
   <view class="menu-item" bindtap="showAction">
     <view class="menu-icon">
-      <image class="arrow" src="../../images/tel.png"></image>
+      <image class="arrow" src="../../images/center_tel.png"></image>
     </view>
-    <view class="menu-name">
+    <view class="menu-name border-b">
       <text class="name">客服电话</text>
       <image class="arrow" src="../../images/enter.png"></image>
     </view>
@@ -37,13 +37,49 @@
   
   <button class="kfbtn menu-item" open-type="contact">
     <view class="menu-icon">
-      <image class="arrow" src="../../images/weixin.png"></image>
+      <image class="arrow" src="../../images/menu_kf.png"></image>
     </view>
-    <view class="menu-name">
+    <view class="menu-name border-b">
       <text class="name">微信客服</text>
       <image class="arrow" src="../../images/enter.png"></image>
     </view>
   </button>
+  <navigator url="../public/public" class="menu-item">
+    <view class="menu-icon">
+      <image class="arrow" src="../../images/public.png"></image>
+    </view>
+    <view class="menu-name border-b">
+      <text class="name">公众号</text>
+      <image class="arrow" src="../../images/enter.png"></image>
+    </view>
+  </navigator>
+  <view class="menu-item">
+    <view class="menu-icon">
+      <image class="arrow" src="../../images/share.png"></image>
+    </view>
+    <view class="menu-name border-b">
+      <text class="name">分享小程序</text>
+      <image class="arrow" src="../../images/enter.png"></image>
+    </view>
+  </view>
+  <navigator url="../qrcode/qrcode" class="menu-item">
+    <view class="menu-icon">
+      <image class="arrow" src="../../images/qrcode.png"></image>
+    </view>
+    <view class="menu-name border-b">
+      <text class="name">小程序二维码</text>
+      <image class="arrow" src="../../images/enter.png"></image>
+    </view>
+  </navigator>
+  <navigator url="../introduce/introduce" class="menu-item" bindtap="screenImg">
+    <view class="menu-icon">
+      <image class="arrow" src="../../images/introduce.png"></image>
+    </view>
+    <view class="menu-name">
+      <text class="name">相关简介</text>
+      <image class="arrow" src="../../images/enter.png"></image>
+    </view>
+  </navigator>
 </view>
 
 <!-- <action-sheet hidden="{{actionSheetHidden}}">

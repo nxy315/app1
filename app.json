@@ -5,7 +5,10 @@
     "pages/info/info",
     "pages/center/center",
     "pages/detail/detail",
-    "pages/topic/topic"
+    "pages/topic/topic",
+    "pages/introduce/introduce",
+    "pages/qrcode/qrcode",
+    "pages/public/public"
   ],
   "window": {
     "backgroundTextStyle": "light",

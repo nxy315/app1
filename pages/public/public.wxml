@@ -1,0 +1,4 @@
+<!--pages/public/public.wxml-->
+<view>
+  展示公众号二维码
+</view>

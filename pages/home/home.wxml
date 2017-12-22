@@ -2,30 +2,30 @@
 <view id="fastEnter">
   <view class="enter" data-id="1" bindtap="toList">
     <view class="icon icon1">
-      <image src="../../images/money1.png"></image>
+      <image src="../../images/money0.png"></image>
     </view>
     <view class="des">1~5千</view>
   </view>
   <view class="enter" data-id="1" bindtap="toList">
-    <view class="icon icon1">
+    <view class="icon icon2">
       <image src="../../images/money1.png"></image>
     </view>
     <view class="des">5千~1万</view>
   </view>  
   <view class="enter" data-id="2" bindtap="toList">
-    <view class="icon icon2">
+    <view class="icon icon3">
       <image src="../../images/money2.png"></image>
     </view>
     <view class="des">1~5万</view>
   </view>
   <view class="enter" data-id="3" bindtap="toList">
-    <view class="icon icon3">
+    <view class="icon icon4">
       <image src="../../images/sponsor_fill.png"></image>
     </view>
     <view class="des">5万以上</view>
   </view>
   <view class="enter" data-id="4" bindtap="toList">
-    <view class="icon icon4">
+    <view class="icon icon5">
       <image src="../../images/hot_fill.png"></image>
     </view>
     <view class="des">急用钱</view>
