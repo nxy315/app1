@@ -1,0 +1,4 @@
+<!--pages/qrcode/qrcode.wxml-->
+<view>
+  生成小程序二维码，请用手机截图保存您的微信信息
+</view>

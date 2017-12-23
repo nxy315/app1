@@ -1,5 +1,6 @@
 // pages/center/center.js
 const app = getApp()
+const html2canvas = require('../../utils/html2canvas.js');
 
 Page({
 
@@ -12,6 +13,10 @@ Page({
     // canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
+  screenImg: function() {
+    console.log(html2canvas);
+  },
+
   openSettion: function() {
     // wx.openSetting({
     //   success: function(data) {}
@@ -22,7 +27,7 @@ Page({
   },
   showAction: function() {
     wx.makePhoneCall({
-      phoneNumber: '13938012302'
+      phoneNumber: '17721140500'
     })   
     
   },

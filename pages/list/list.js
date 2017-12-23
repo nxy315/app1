@@ -10,13 +10,19 @@ Page({
     filter: ['额度不限', '资料不限', '期限不限'],
     filterIndex: -1,
     quotaIndex: 0,
-    quotaData: [{ title: '额度不限', id: 1 }, { title: '1万以下', id: 2 }, { title: '1万~5万', id: 3 }, { title: '5万以上', id: 4 }],
+    quotaData: [{ title: '额度不限', id: 1 }, { title: '1~5千', id: 2 }, { title: '5千~1万', id: 3 }, { title: '1~5万', id: 4 }, { title: '5万以上', id: 5 }],
     fileData: [{ title: '资料不限', id: 1 }, { title: '我有身份证', id: 2 }, { title: '我有信用卡', id: 3 }, { title: '我有网购账号', id: 4 }, { title: '我有支付宝账号', id: 5 }, { title: '我有认证手机号', id: 6 }],
     termData: [{ title: '期限不限', id: 1 }, { title: '1~6个月', id: 2 }, { title: '6~12个月', id: 3 }, { title: '12个月以上', id: 4 }],
     fileIndex: 0,
     termIndex: 0,
   },
 
+  /* 获取列表数据 */
+  getList: function() {
+    
+  },
+
+  /* 筛选点击事件 */
   tapFilter: function(e) {
     var index = e.currentTarget.dataset.index;
     if(this.data.filterIndex == index) {
@@ -29,6 +35,8 @@ Page({
       })
     }
   },
+
+  /* 选择额度 */
   chooseQuota: function (e) {
     var index = e.currentTarget.dataset.index;
     var title = e.currentTarget.dataset.title;
@@ -41,6 +49,8 @@ Page({
       filterIndex: -1
     })
   },
+
+  /* 选择资料 */
   chooseFile: function(e) {
     var index = e.currentTarget.dataset.index;
     var title = e.currentTarget.dataset.title;
@@ -51,6 +61,8 @@ Page({
       filterIndex: -1
     })
   },
+
+  /* 选择期限 */
   chooseTerm: function(e) {
     var index = e.currentTarget.dataset.index;
     var title = e.currentTarget.dataset.title;
@@ -62,6 +74,7 @@ Page({
     })
   },
 
+  /* 隐藏蒙版 */
   maskHide: function() {
     this.setData({
       filterIndex: -1
@@ -97,6 +110,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
+
+    /* 进入页面判断是否带信息 */
     var id = app.globalData.listParams, defaultData;
     defaultData = [this.data.quotaData[id].title, '资料不限', '期限不限']
 

@@ -23,7 +23,7 @@ page{
   width: 680rpx;
   background-color: #fff;
   border-radius: 16rpx;
-  box-shadow: 0 8rpx 58rpx 4rpx #696967;
+  box-shadow: 0 8rpx 58rpx 4rpx #ccc;
 }
 #infoForm .form-item{
   display: flex;
@@ -39,7 +39,32 @@ page{
 #infoForm .form-item .form-name{
   width: 180rpx;
 }
-#infoForm .form-item .form-content{}
+#infoForm .form-item .form-content{
+  width: 440rpx;
+  height: 100%;
+  color: #333;
+}
+#infoForm .form-item .select-content{
+  position: relative;
+}
+#infoForm .form-item .select-content .select-arrow{
+  position: absolute;
+  right: 0;
+  top: 20rpx;
+  width: 55rpx;
+  height: 55rpx;
+}
+#infoForm .form-item .input-content{
+  width: 250rpx;
+}
+
+#infoForm .form-item .text-content{
+  width: 180rpx;
+  text-align: right;
+}
+#infoForm .form-item .get-code{
+  color: #3f96f8;
+}
 #submit{
   margin-top: 40rpx;
   width: 620rpx;

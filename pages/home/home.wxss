@@ -9,7 +9,7 @@
   font-size: 24rpx;
 }
 #fastEnter .enter{
-  width: 25%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,8 +21,8 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 8px;
-  width: 90rpx;
-  height: 90rpx;
+  width: 80rpx;
+  height: 80rpx;
   border-radius: 50%;
 }
 #fastEnter .icon1{
@@ -37,13 +37,16 @@
 #fastEnter .icon4{
   background: -webkit-linear-gradient(top, #a1a7da, #505ec5);
 }
+#fastEnter .icon5{
+  background: -webkit-linear-gradient(top, #fb69a7, #f4438e);
+}
 
 #fastEnter .icon image{
   width: 55rpx;
   height: 55rpx;
 }
 #fastEnter .des{
-  font-size: 28rpx;
+  font-size: 26rpx;
 }
 
 .block{
