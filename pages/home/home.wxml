@@ -37,34 +37,15 @@
 <view class="topic">
   <view class="head">精选贷款专题</view>
   <scroll-view scroll-x="true" class="cards">
-    <view class="card-wrap">
-      <view class="card" data-id="1" bindtap="toTopic">
-        <image src="../../images/bg1.png"></image>
-        <view class="title">芝麻分就能借</view>
-        <view class="des">秒下5000不剁手</view>
+
+    <view class="card-wrap" wx:for="{{specialData}}" wx:key="{{index}}">
+      <view class="card" data-id="{{item.id}}" bindtap="toTopic">
+        <image mode="aspectFill" src="{{item.cate_image}}"></image>
+        <view class="title">{{item.cate_name}}</view>
+        <view class="des">{{item.first_title}}</view>
       </view>
     </view>
-    <view class="card-wrap">
-      <view class="card" data-id="1" bindtap="toTopic">
-        <image src="../../images/bg2.png"></image>
-        <view class="title">芝麻分就能借</view>
-        <view class="des">秒下5000不剁手</view>
-      </view>
-    </view>
-    <view class="card-wrap">
-      <view class="card" data-id="1" bindtap="toTopic">
-        <image src="../../images/bg3.png"></image>
-        <view class="title">芝麻分就能借</view>
-        <view class="des">秒下5000不剁手</view>
-      </view>
-    </view>
-    <view class="card-wrap">
-      <view class="card" data-id="1" bindtap="toTopic">
-        <image src="../../images/bg4.png"></image>
-        <view class="title">芝麻分就能借</view>
-        <view class="des">秒下5000不剁手</view>
-      </view>
-    </view>
+  
   </scroll-view>
 </view>
 
@@ -77,74 +58,25 @@
   </view>
 
   <view class="list">
-    <view class="item" data-id="1" bindtap="toDetail">
+
+    <view class="item" wx:for="{{newData}}" wx:key="{{index}}" data-id="1" bindtap="toDetail">
       <view class="cover">
-        <image src="../../images/starbucks.jpg"></image>
+        <image mode="aspectFill" src="{{item.logo}}"></image>
       </view>
       <view class="detail">
         <view class="name">
-          <view>即速贷</view>
+          <view>{{item.name}}</view>
           <view class="tail">
-            <text class="time">3分钟</text>
+            <text class="time">{{item.audit_time + item.audit_unit}}</text>
             <text class="fk">放款</text>
           </view>
         </view>
-        <view class="count">1万-20万/1000人申请</view>
+        <view class="count">1万-20万/{{item.apply_num}}人申请</view>
         <view class="info">因为专业，所以恒久因为专业，所以</view>
       </view>
       <view class="apply">申请</view>
     </view>
-    <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover">
-        <image src="../../images/starbucks.jpg"></image>
-      </view>
-      <view class="detail">
-        <view class="name">
-          <view>即速贷</view>
-          <view class="tail">
-            <text class="time">3分钟</text>
-            <text class="fk">放款</text>
-          </view>
-        </view>
-        <view class="count">1万-20万/1000人申请</view>
-        <view class="info">因为专业，所以恒久因为专业，所以</view>
-      </view>
-      <view class="apply">申请</view>
-    </view>
-    <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover">
-        <image src="../../images/starbucks.jpg"></image>
-      </view>
-      <view class="detail">
-        <view class="name">
-          <view>即速贷</view>
-          <view class="tail">
-            <text class="time">3分钟</text>
-            <text class="fk">放款</text>
-          </view>
-        </view>
-        <view class="count">1万-20万/1000人申请</view>
-        <view class="info">因为专业，所以恒久因为专业，所以</view>
-      </view>
-      <view class="apply">申请</view>
-    </view>
-    <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover">
-        <image src="../../images/starbucks.jpg"></image>
-      </view>
-      <view class="detail">
-        <view class="name">
-          <view>即速贷</view>
-          <view class="tail">
-            <text class="time">3分钟</text>
-            <text class="fk">放款</text>
-          </view>
-        </view>
-        <view class="count">1万-20万/1000人申请</view>
-        <view class="info">因为专业，所以恒久因为专业，所以</view>
-      </view>
-      <view class="apply">申请</view>
-    </view>
+
   </view>
 </view>
 
@@ -157,15 +89,16 @@
   </view>
 
   <view class="list">
-    <view class="item" data-id="1" bindtap="toDetail">
+
+    <view class="item" wx:for="{{hotData}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toDetail">
       <view class="cover">
-        <image src="../../images/starbucks.jpg"></image>
+        <image mode="aspectFill" src="{{item.logo}}"></image>
       </view>
       <view class="detail">
         <view class="name">
-          <view>即速贷</view>
+          <view>{{item.name}}</view>
           <view class="tail">
-            <text class="time">3分钟</text>
+            <text class="time">{{item.audit_time + item.audit_unit}}</text>
             <text class="fk">放款</text>
           </view>
         </view>
@@ -174,74 +107,6 @@
       </view>
       <view class="apply">申请</view>
     </view>
-    <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover">
-        <image src="../../images/starbucks.jpg"></image>
-      </view>
-      <view class="detail">
-        <view class="name">
-          <view>即速贷</view>
-          <view class="tail">
-            <text class="time">3分钟</text>
-            <text class="fk">放款</text>
-          </view>
-        </view>
-        <view class="count">1万-20万/1000人申请</view>
-        <view class="info">因为专业，所以恒久因为专业，所以</view>
-      </view>
-      <view class="apply">申请</view>
-    </view>
-    <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover">
-        <image src="../../images/starbucks.jpg"></image>
-      </view>
-      <view class="detail">
-        <view class="name">
-          <view>即速贷</view>
-          <view class="tail">
-            <text class="time">3分钟</text>
-            <text class="fk">放款</text>
-          </view>
-        </view>
-        <view class="count">1万-20万/1000人申请</view>
-        <view class="info">因为专业，所以恒久因为专业，所以</view>
-      </view>
-      <view class="apply">申请</view>
-    </view>
-    <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover">
-        <image src="../../images/starbucks.jpg"></image>
-      </view>
-      <view class="detail">
-        <view class="name">
-          <view>即速贷</view>
-          <view class="tail">
-            <text class="time">3分钟</text>
-            <text class="fk">放款</text>
-          </view>
-        </view>
-        <view class="count">1万-20万/1000人申请</view>
-        <view class="info">因为专业，所以恒久因为专业，所以</view>
-      </view>
-      <view class="apply">申请</view>
-    </view>
-    <view class="item" data-id="1" bindtap="toDetail">
-      <view class="cover">
-        <image src="../../images/starbucks.jpg"></image>
-      </view>
-      <view class="detail">
-        <view class="name">
-          <view>即速贷</view>
-          <view class="tail">
-            <text class="time">3分钟</text>
-            <text class="fk">放款</text>
-          </view>
-        </view>
-        <view class="count">1万-20万/1000人申请</view>
-        <view class="info">因为专业，所以恒久因为专业，所以</view>
-      </view>
-      <view class="apply">申请</view>
-    </view>
-    
+
   </view>
 </view>

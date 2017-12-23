@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    specialData: [],
+    hotData: [],
+    newData: []
   },
 
   //跳转详情
@@ -46,14 +48,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _this = this;
     wx.request({
-      url: 'http://money.wavov.cn/thirdApi/index/index', //仅为示例，并非真实的接口地址
+      method: 'post',
+      url: 'https://www.necol.cn/thirdApi/index/index', //仅为示例，并非真实的接口地址
       data: {},
+      dataType: 'json',
       header: {
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        console.log(res)
+        console.log(res.data.data)
+        _this.setData({
+          specialData: res.data.data.special_list,
+          hotData: res.data.data.hot_list,
+          newData: res.data.data.new_list
+        })
       }
     })
   },

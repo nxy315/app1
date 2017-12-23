@@ -44,21 +44,12 @@
       <image class="arrow" src="../../images/enter.png"></image>
     </view>
   </button>
-  <navigator url="../public/public" class="menu-item">
-    <view class="menu-icon">
-      <image class="arrow" src="../../images/public.png"></image>
-    </view>
-    <view class="menu-name border-b">
-      <text class="name">公众号</text>
-      <image class="arrow" src="../../images/enter.png"></image>
-    </view>
-  </navigator>
   <view class="menu-item">
     <view class="menu-icon">
       <image class="arrow" src="../../images/share.png"></image>
     </view>
     <view class="menu-name border-b">
-      <text class="name">分享小程序</text>
+      <text class="name">邀请好友</text>
       <image class="arrow" src="../../images/enter.png"></image>
     </view>
   </view>
@@ -67,7 +58,16 @@
       <image class="arrow" src="../../images/qrcode.png"></image>
     </view>
     <view class="menu-name border-b">
-      <text class="name">小程序二维码</text>
+      <text class="name">分享朋友圈</text>
+      <image class="arrow" src="../../images/enter.png"></image>
+    </view>
+  </navigator>
+  <navigator url="../public/public" class="menu-item">
+    <view class="menu-icon">
+      <image class="arrow" src="../../images/public.png"></image>
+    </view>
+    <view class="menu-name border-b">
+      <text class="name">微信公众号</text>
       <image class="arrow" src="../../images/enter.png"></image>
     </view>
   </navigator>
