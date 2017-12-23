@@ -9,38 +9,6 @@ Page({
   data: {
   
   },
-  draw: function() {
-    // const ctx = wx.createCanvasContext('myCanvas')
-    // var i = -0.5;
-    // var count = 0.01;
-   
-    // timer = setInterval(function () {
-      // if (i <= 1) {
-        // ctx.beginPath()
-        // ctx.arc(85, 65, 50, 1.4 * Math.PI, 1.5 * Math.PI)
-        // ctx.setLineWidth(12)
-        // ctx.setStrokeStyle('#ff856d')
-        // ctx.stroke()
-        // ctx.beginPath()
-        // ctx.arc(85, 65, 50, 0, 1.4*Math.PI)                                                                                                                                                                                                                                                                        
-        // ctx.setLineWidth(13)
-        // ctx.setStrokeStyle('#32ccaa')
-        // ctx.stroke()
-        
-        // ctx.draw()
-
-        // ctx.beginPath()
-        // ctx.arc(85, 65, 50, -0.5* Math.PI, 0)
-        // ctx.setLineWidth(12)
-        // ctx.setStrokeStyle('yellow')
-        // ctx.stroke()
-        // ctx.draw()
-      // }
-      // count = count * 1.05
-      // i += count
-    // }, 20)
-    
-  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -104,7 +72,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.draw();
+    
   },
 
   /**
