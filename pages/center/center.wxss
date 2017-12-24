@@ -7,9 +7,9 @@ page{
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 30rpx 0 50rpx;
+  padding: 50rpx 0 50rpx;
   height: 220rpx;
-  background-color: #666;
+  background-color: #3c3d3f;
 }
 .avator{
   padding: 0;

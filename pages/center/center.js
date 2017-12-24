@@ -13,6 +13,12 @@ Page({
     // canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
+  loginPage: function() {
+    wx.navigateTo({
+      url: '../login/login',
+    })
+  },
+
   screenImg: function() {
     console.log(html2canvas);
   },

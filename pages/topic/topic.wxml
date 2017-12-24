@@ -1,8 +1,8 @@
 <!--pages/topic/topic.wxml-->
 <view class="topic-cover">
-  <image src="../../images/bg1.png" mode="aspectFill"></image>
-  <view class="topic-title">芝麻分就能借</view>
-  <view class="topic-des">#网购不用剁手，月末不吃土。拯救月光！#以下产品只需提供芝麻授权，芝麻分大于500就能贷</view>
+  <image src="{{detailData.image}}" mode="aspectFill"></image>
+  <view class="topic-title">{{detailData.cate_name}}</view>
+  <view class="topic-des">#{{detailData.desc}}#</view>
 </view>
 
 <view class="suggest">
@@ -10,26 +10,21 @@
 </view>
 
 <view class="wrap">
-  <view class="product-item" data-id="1" bindtap="toDetail">
+  <view class="product-item" wx:for="{{detailData.list}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toDetail">
     <view class="product-cover">
-      <image src="../../images/starbucks.jpg"></image>
+      <image src="{{item.logo}}" mode="aspectFill"></image>
     </view>
     <view class="product-info">
       <view class="product-name">
-        <text class="name">宜人贷</text>
+        <text class="name">{{item.name}}</text>
         <view class="success-count">
-          <text class="count">3000</text>
+          <text class="count">{{item.apply_num}}</text>
           <text>人成功申请</text>
         </view>
       </view>
       
       <view class="tags">
-        <view class="tag">3分钟审核</view>
-        <view class="tag">低服务费</view>
-        <view class="tag">额度大</view>
-        <view class="tag">批核速度快</view>
-        <view class="tag">额度大</view>
-        <view class="tag">批核速度快</view>
+        <view class="tag" wx:for="{{item.label}}" wx:for-item="itm" wx:for-index="idx" wx:key="idx">{{itm}}</view>
       </view>
 
       <view class="details">
@@ -48,7 +43,9 @@
       </view>
     </view>
   </view>
-  <view class="product-item" data-id="1" bindtap="toDetail">
+
+
+  <!-- <view class="product-item" data-id="1" bindtap="toDetail">
     <view class="product-cover">
       <image src="../../images/starbucks.jpg"></image>
     </view>
@@ -152,38 +149,17 @@
         </view>
       </view>
     </view>
-  </view> 
+  </view> --> 
 </view>
 
 <view class="topic">
   <view class="head">精选贷款专题</view>
   <scroll-view scroll-x="true" class="cards">
-    <view class="card-wrap">
-      <view class="card" data-id="1" bindtap="toTopic">
-        <image src="../../images/bg1.png"></image>
-        <view class="title">芝麻分就能借</view>
-        <view class="des">秒下5000不剁手</view>
-      </view>
-    </view>
-    <view class="card-wrap">
-      <view class="card" data-id="1" bindtap="toTopic">
-        <image src="../../images/bg2.png"></image>
-        <view class="title">芝麻分就能借</view>
-        <view class="des">秒下5000不剁手</view>
-      </view>
-    </view>
-    <view class="card-wrap">
-      <view class="card" data-id="1" bindtap="toTopic">
-        <image src="../../images/bg3.png"></image>
-        <view class="title">芝麻分就能借</view>
-        <view class="des">秒下5000不剁手</view>
-      </view>
-    </view>
-    <view class="card-wrap">
-      <view class="card" data-id="1" bindtap="toTopic">
-        <image src="../../images/bg4.png"></image>
-        <view class="title">芝麻分就能借</view>
-        <view class="des">秒下5000不剁手</view>
+    <view class="card-wrap" wx:for="{{specialData}}" wx:key="{{index}}">
+      <view class="card" data-id="{{item.id}}" bindtap="toTopic">
+        <image mode="aspectFill" src="{{item.cate_image}}"></image>
+        <view class="title">{{item.cate_name}}</view>
+        <view class="des">{{item.first_title}}</view>
       </view>
     </view>
   </scroll-view>

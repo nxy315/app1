@@ -1,0 +1,60 @@
+/* pages/login/login.wxss */
+page{
+  background-color:#f1f3f4;
+}
+.login-title{
+  padding-left: 40rpx;  
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.input-box{
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+  height: 100rpx;
+  font-size: 34rpx;
+}
+
+.input-value{
+  margin-left: 70rpx;
+}
+#getCode,#codeErr{
+  width: 130rpx;
+  font-size: 24rpx;
+}
+
+#codeErr{
+  color: #999;
+}
+.tel-box{
+  border-bottom: 2rpx solid #eaeaea;
+}
+.tel{
+  width: 368rpx;
+  height: 98rpx;
+}
+
+.code{
+  flex: 1;
+  height: 98rpx;
+}
+
+#bindBtn{
+  margin: 70rpx auto 0;
+  width: 666rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #0860de;
+  color: #fff;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+}
+#bindBtn:active{
+  background-color: #0555c7;
+}

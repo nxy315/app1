@@ -37,7 +37,8 @@ App({
     // })
   },
   globalData: {
-    listParams: 0,
-    userInfo: null
+    listParams: 1,
+    userInfo: null,
+    dataUrl: 'https://www.necol.cn'
   }
 })

@@ -198,9 +198,6 @@ page{
 .padding-card{
   padding: 40rpx 30rpx;
 }
-.product-need{
-
-}
 .product-need .needs{
   display: flex;
   flex-direction: row;
@@ -344,6 +341,7 @@ page{
   height: 40rpx;
 }
 #apply{
+  margin-right: 0;
   width: 240rpx;
   height: 90rpx;
   line-height: 90rpx;
@@ -363,7 +361,7 @@ page{
 .canvas{
   margin-left: -2vw;
   margin-top: -6vw;
-  width: 100vw;
+  width: 96vw;
   height: 50vw;
   /* transform: rotate(-90deg); */
 }

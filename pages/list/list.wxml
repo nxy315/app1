@@ -19,28 +19,23 @@
   <view id="mask" wx:if="{{filterIndex != -1}}" bindtap="maskHide"></view>
 </view>
 
-<view class="much">共找到100款适合您的产品</view>
+<view class="much">共找到{{total}}款适合您的产品</view>
 
-<view class="product-item" data-id="1" bindtap="toDetail">
+<view class="product-item" wx:for="{{listData}}" data-id="{{item.id}}" wx:key="{{index}}" bindtap="toDetail">
   <view class="product-cover">
-    <image src="../../images/starbucks.jpg"></image>
+    <image src="{{item.logo}}" mode="aspectFill"></image>
   </view>
   <view class="product-info">
     <view class="product-name">
-      <text class="name">宜人贷</text>
+      <text class="name">{{item.name}}</text>
       <view class="success-count">
-        <text class="count">3000</text>
+        <text class="count">{{item.apply_num}}</text>
         <text>人成功申请</text>
       </view>
     </view>
     
     <view class="tags">
-      <view class="tag">3分钟审核</view>
-      <view class="tag">低服务费</view>
-      <view class="tag">额度大</view>
-      <view class="tag">批核速度快</view>
-      <view class="tag">额度大</view>
-      <view class="tag">批核速度快</view>
+      <view class="tag" wx:for="{{item.label}}" wx:for-item="itm" wx:for-index="idx" wx:key="{{idx}}">{{itm}}</view>
     </view>
 
     <view class="details">
@@ -59,117 +54,5 @@
     </view>
   </view>
 </view>
-<view class="product-item" data-id="1" bindtap="toDetail">
-  <view class="product-cover">
-    <image src="../../images/starbucks.jpg"></image>
-  </view>
-  <view class="product-info">
-    <view class="product-name">
-      <text class="name">宜人贷</text>
-      <view class="success-count">
-        <text class="count">3000</text>
-        <text>人成功申请</text>
-      </view>
-    </view>
-    
-    <view class="tags">
-      <view class="tag">3分钟审核</view>
-      <view class="tag">低服务费</view>
-      <view class="tag">额度大</view>
-      <view class="tag">批核速度快</view>
-      <view class="tag">额度大</view>
-      <view class="tag">批核速度快</view>
-    </view>
 
-    <view class="details">
-      <view class="detail">
-        <text class="detail-des">可借额度</text>
-        <text class="detail-money">2000~10万</text>
-      </view>
-      <view class="detail">
-        <text class="detail-des">月利率</text>
-        <text class="detail-money">0.8%</text>
-      </view>
-      <view class="detail">
-        <text class="detail-des">下款时间</text>
-        <text class="detail-money">当天放款</text>
-      </view>
-    </view>
-  </view>
-</view>
-<view class="product-item" data-id="1" bindtap="toDetail">
-  <view class="product-cover">
-    <image src="../../images/starbucks.jpg"></image>
-  </view>
-  <view class="product-info">
-    <view class="product-name">
-      <text class="name">宜人贷</text>
-      <view class="success-count">
-        <text class="count">3000</text>
-        <text>人成功申请</text>
-      </view>
-    </view>
-    
-    <view class="tags">
-      <view class="tag">3分钟审核</view>
-      <view class="tag">低服务费</view>
-      <view class="tag">额度大</view>
-      <view class="tag">批核速度快</view>
-      <view class="tag">额度大</view>
-      <view class="tag">批核速度快</view>
-    </view>
-
-    <view class="details">
-      <view class="detail">
-        <text class="detail-des">可借额度</text>
-        <text class="detail-money">2000~10万</text>
-      </view>
-      <view class="detail">
-        <text class="detail-des">月利率</text>
-        <text class="detail-money">0.8%</text>
-      </view>
-      <view class="detail">
-        <text class="detail-des">下款时间</text>
-        <text class="detail-money">当天放款</text>
-      </view>
-    </view>
-  </view>
-</view>
-<view class="product-item" data-id="1" bindtap="toDetail">
-  <view class="product-cover">
-    <image src="../../images/starbucks.jpg"></image>
-  </view>
-  <view class="product-info">
-    <view class="product-name">
-      <text class="name">宜人贷</text>
-      <view class="success-count">
-        <text class="count">3000</text>
-        <text>人成功申请</text>
-      </view>
-    </view>
-    
-    <view class="tags">
-      <view class="tag">3分钟审核</view>
-      <view class="tag">低服务费</view>
-      <view class="tag">额度大</view>
-      <view class="tag">批核速度快</view>
-      <view class="tag">额度大</view>
-      <view class="tag">批核速度快</view>
-    </view>
-
-    <view class="details">
-      <view class="detail">
-        <text class="detail-des">可借额度</text>
-        <text class="detail-money">2000~10万</text>
-      </view>
-      <view class="detail">
-        <text class="detail-des">月利率</text>
-        <text class="detail-money">0.8%</text>
-      </view>
-      <view class="detail">
-        <text class="detail-des">下款时间</text>
-        <text class="detail-money">当天放款</text>
-      </view>
-    </view>
-  </view>
-</view>
+<view class="loadingData">{{length*start >= total ? "已经到底啦~" : "数据加载中，请稍后..."}}</view>

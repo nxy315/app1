@@ -24,7 +24,7 @@ Page({
   toList: function(e) {
     var id = e.currentTarget.dataset.id;
 
-    if (id != "4") {
+    if (id != "6") {
       app.globalData.listParams = id;
       wx.switchTab({
         url: '../list/list',
@@ -51,14 +51,14 @@ Page({
     var _this = this;
     wx.request({
       method: 'post',
-      url: 'https://www.necol.cn/thirdApi/index/index', //仅为示例，并非真实的接口地址
+      url: app.globalData.dataUrl + '/thirdApi/index/index', //仅为示例，并非真实的接口地址
       data: {},
       dataType: 'json',
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+        // 'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        console.log(res.data.data)
         _this.setData({
           specialData: res.data.data.special_list,
           hotData: res.data.data.hot_list,

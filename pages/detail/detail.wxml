@@ -2,26 +2,18 @@
 <view class="product-cover">
   <image class="cover-bg" mode="aspectFill" src="../../images/detail_bg.png"></image>
   <view class="cover">
-    <image src="../../images/starbucks.jpg"></image>
+    <image src="{{detailData.logo}}" mode="aspectFill"></image>
   </view>
   <view class="info">
-    <text class="name">宜人贷</text>
-    <text class="des">在线申请，批核速度快，申请模式多样。</text>
+    <text class="name">{{detailData.title}}</text>
+    <!-- <text class="des">在线申请，批核速度快，申请模式多样。</text> -->
   </view>
 </view>
 
-<view class="tags">
-  <view class="tag">
+<view class="tags" wx:if="{{detailData.label.length > 0}}">
+  <view class="tag" wx:for="{{detailData.label}}" wx:key="{{index}}">
     <image src="../../images/success.png"></image>
-    在线申请
-  </view>
-  <view class="tag">
-    <image src="../../images/success.png"></image>
-    批核速度快
-  </view>
-  <view class="tag">
-    <image src="../../images/success.png"></image>
-    申请模式多样
+    {{item}}
   </view>
 </view>
 
@@ -81,12 +73,11 @@
 
 <view class="block"></view>
 
-<view class="product-need padding-card">
+<!-- <view class=" padding-card">
   <view class="product-title">所需材料</view>
   <view class="needs">
     <view class="need-item">
       <image class="icon-need" src="../../images/businesscard_fill.png"></image>
-      <!-- <view class="icon-need"></view> -->
       <view class="name-need">身份证</view>
     </view>
     <view class="need-item">
@@ -98,28 +89,19 @@
       <view class="name-need">手机认证</view>
     </view>
   </view>
-</view>
+</view> -->
 
 <view class="block"></view>
 
 <view class="product-condition">
-  <view class="condition-card">
-    <text class="product-title">申请条件</text>
+  <view class="condition-card" wx:for="{{detailData.detail}}" wx:key="{{index}}">
+    <text class="product-title">{{item.title}}</text>
     <view class="text-condition">
-      <text>1、有信用卡</text>
-      <text>2、有身份证</text>
-      <text>3、手机认证</text>
+      <text wx:for="{{item.content}}" wx:for-item="itm" wx:for-index="idx" wx:key="{{idx}}">{{idx+1}}、{{itm}}</text>
     </view>
   </view>
 
-  <view class="condition-card">
-    <text class="product-title">所需材料说明</text>
-    <view class="text-condition">
-      <text>手机实名制等</text>
-    </view>
-  </view>
-
-  <view class="condition-card">
+  <!-- <view class="condition-card">
     <text class="product-title">利率说明</text>
     <view class="rate-table">
       <view class="rate-item">
@@ -131,7 +113,7 @@
         <view class="count-rate">0.78%</view>
       </view>
     </view>
-  </view>
+  </view> -->
 </view>
 
 <view class="block"></view>
@@ -140,12 +122,12 @@
   <view class="left-fixed">
     <view class="des-left">
       <text class="text">免费</text>
-      <view class="num"><text class="count">5000</text>人申请</view>
+      <view class="num"><text class="count">{{detailData.apply}}</text>人申请</view>
     </view>
     <button id="share" open-type="share" hover-class="btn-hover">
       <image src="../../images/share_fill.png"></image>
       分享
     </button>
   </view>
-  <view id="apply">免费申请</view>
+  <button id="apply" open-type="contact">免费申请</button>
 </view>

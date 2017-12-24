@@ -1,30 +1,30 @@
 <!--pages/home/home.wxml-->
 <view id="fastEnter">
-  <view class="enter" data-id="1" bindtap="toList">
+  <view class="enter" data-id="2" bindtap="toList">
     <view class="icon icon1">
       <image src="../../images/money0.png"></image>
     </view>
     <view class="des">1~5千</view>
   </view>
-  <view class="enter" data-id="1" bindtap="toList">
+  <view class="enter" data-id="3" bindtap="toList">
     <view class="icon icon2">
       <image src="../../images/money1.png"></image>
     </view>
     <view class="des">5千~1万</view>
   </view>  
-  <view class="enter" data-id="2" bindtap="toList">
+  <view class="enter" data-id="4" bindtap="toList">
     <view class="icon icon3">
       <image src="../../images/money2.png"></image>
     </view>
     <view class="des">1~5万</view>
   </view>
-  <view class="enter" data-id="3" bindtap="toList">
+  <view class="enter" data-id="5" bindtap="toList">
     <view class="icon icon4">
       <image src="../../images/sponsor_fill.png"></image>
     </view>
     <view class="des">5万以上</view>
   </view>
-  <view class="enter" data-id="4" bindtap="toList">
+  <view class="enter" data-id="6" bindtap="toList">
     <view class="icon icon5">
       <image src="../../images/hot_fill.png"></image>
     </view>
@@ -53,13 +53,13 @@
 
 <view class="hot-list">
   <view class="hot-title">
-    <text class="title">必撸新口子</text>
+    <text class="title">必借新产品</text>
     <text class="des">借不到钱看这里</text>
   </view>
 
   <view class="list">
 
-    <view class="item" wx:for="{{newData}}" wx:key="{{index}}" data-id="1" bindtap="toDetail">
+    <view class="item" wx:for="{{newData}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toDetail">
       <view class="cover">
         <image mode="aspectFill" src="{{item.logo}}"></image>
       </view>
@@ -84,7 +84,7 @@
 
 <view class="hot-list">
   <view class="hot-title">
-    <text class="title">热门口子人气榜</text>
+    <text class="title">热门产品人气榜</text>
     <text class="des">大家喜欢的才是最好的！</text>
   </view>
 

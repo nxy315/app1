@@ -1,18 +1,45 @@
 // pages/detail/detail.js
 var wxCharts = require('../../utils/wxcharts.js');
 var timer = null;
+var app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    detailData: {}
+  },
+
+  getData: function(id) {
+    var _this = this;
+
+    wx.request({
+      method: 'post',
+      url: app.globalData.dataUrl + '/thirdApi/index/LoanDetail', //仅为示例，并非真实的接口地址
+      data: {
+        id: id
+      },
+      dataType: 'json',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success: function (res) {
+        console.log(res)
+        _this.setData({
+          detailData: res.data.data
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var id = options.id;
+    this.getData(id)
+
     let windowWidth = 320;
     try {
       let res = wx.getSystemInfoSync();
@@ -72,7 +99,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**

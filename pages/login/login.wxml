@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+<view>
+  <view class="login-title">绑定即可查看申请进度，定制贷款产品等服务</view>
+  <view class="input-box tel-box">
+    <view class="input-name">手机号</view>
+    <input class="input-value tel" bindinput="getPhone" placeholder='请输入您的手机号'></input>
+    <view id="getCode" wx:if="{{!codeErr}}" bindtap="getCode">获取验证码</view>
+    <view id="codeErr" wx:if="{{codeErr}}">获取验证码</view>
+  </view>
+  <view class="input-box">
+    <view class="input-name">验证码</view>
+    <input class="input-value code" placeholder='输入验证码'></input>
+  </view>
+
+  <view id="bindBtn">点击绑定</view>
+</view>
