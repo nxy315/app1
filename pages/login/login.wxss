@@ -24,8 +24,12 @@ page{
   margin-left: 70rpx;
 }
 #getCode,#codeErr{
-  width: 130rpx;
+  width: 160rpx;
   font-size: 24rpx;
+  text-align: right;
+}
+#getCode{
+  color: #3f96f8;
 }
 
 #codeErr{
@@ -35,7 +39,7 @@ page{
   border-bottom: 2rpx solid #eaeaea;
 }
 .tel{
-  width: 368rpx;
+  width: 338rpx;
   height: 98rpx;
 }
 

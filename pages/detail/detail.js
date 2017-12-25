@@ -9,7 +9,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detailData: {}
+    detailData: {},
+    id: ''
+  },
+
+  getKF: function() {
+    var _this = this;
+    
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          wx.request({
+            method: 'get',
+            url: app.globalData.dataUrl + '/thirdApi/Message/SendMessage',
+            data: {
+              code: res.code,
+              type: 1,
+              id: _this.data.id
+            },
+            dataType: 'json',
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            success: function (res) {
+              
+            }
+          })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
+        }
+      }
+    });
   },
 
   getData: function(id) {
@@ -26,7 +56,6 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: function (res) {
-        console.log(res)
         _this.setData({
           detailData: res.data.data
         })
@@ -38,6 +67,9 @@ Page({
    */
   onLoad: function (options) {
     var id = options.id;
+    this.setData({
+      id: id
+    })
     this.getData(id)
 
     let windowWidth = 320;

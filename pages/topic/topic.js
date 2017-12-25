@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loading: true,
     detailData: {},
     specialData: []
   },
@@ -24,6 +25,7 @@ Page({
       },
       success: function (res) {
         _this.setData({
+          loading: false,
           detailData: res.data.data
         })
       }

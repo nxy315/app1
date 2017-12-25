@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loading: true,
     filter: ['额度不限', '资料不限', '期限不限'],
     filterIndex: -1,
     quotaIndex: 0,
@@ -27,7 +28,9 @@ Page({
   /* 获取列表数据 */
   getList: function() {
     wx.showNavigationBarLoading()
-    
+    this.setData({
+      loading: false
+    })
     var _this = this;
     wx.request({
       method: 'post',

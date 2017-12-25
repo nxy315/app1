@@ -13,14 +13,38 @@ Page({
     // canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
+  getKF: function () {
+    var _this = this;
+
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          wx.request({
+            method: 'get',
+            url: app.globalData.dataUrl + '/thirdApi/Message/SendMessage',
+            data: {
+              code: res.code,
+              type: 2
+            },
+            dataType: 'json',
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            success: function (res) {
+              
+            }
+          })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
+        }
+      }
+    });
+  },
+
   loginPage: function() {
     wx.navigateTo({
       url: '../login/login',
     })
-  },
-
-  screenImg: function() {
-    console.log(html2canvas);
   },
 
   openSettion: function() {
@@ -33,7 +57,7 @@ Page({
   },
   showAction: function() {
     wx.makePhoneCall({
-      phoneNumber: '17721140500'
+      phoneNumber: '4001865001'
     })   
     
   },

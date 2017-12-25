@@ -1,4 +1,7 @@
 <!--pages/topic/topic.wxml-->
+<view id="loading" wx:if="{{loading}}">
+  <image src="../../images/loading.gif"></image>
+</view>
 <view class="topic-cover">
   <image src="{{detailData.image}}" mode="aspectFill"></image>
   <view class="topic-title">{{detailData.cate_name}}</view>

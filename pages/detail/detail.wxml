@@ -129,5 +129,6 @@
       分享
     </button>
   </view>
-  <button id="apply" open-type="contact">免费申请</button>
+  <!-- <contact-button id="apply" bindtap="getKF">免费申请</contact-button> -->
+   <button id="apply" open-type="contact" bindtap="getKF">免费申请</button> 
 </view>

@@ -9,7 +9,8 @@
     "pages/introduce/introduce",
     "pages/qrcode/qrcode",
     "pages/public/public",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/Invitation/Invitation"
   ],
   "window": {
     "backgroundTextStyle": "light",

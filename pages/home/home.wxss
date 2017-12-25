@@ -106,7 +106,7 @@
   height: 130rpx;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .list .item .detail .name{
   display: flex;
@@ -155,4 +155,21 @@
 .list .item .apply:active{
   color: #fff;
   background-color: #fa5f22;
+}
+
+#loading{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: #fff;
+}
+#loading image{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -91.5rpx;
+  margin-top: -132.5rpx;
+  width: 183rpx;
+  height: 265rpx;
 }

@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loading: true,
     specialData: [],
     hotData: [],
     newData: []
@@ -60,6 +61,7 @@ Page({
       },
       success: function (res) {
         _this.setData({
+          loading: false,
           specialData: res.data.data.special_list,
           hotData: res.data.data.hot_list,
           newData: res.data.data.new_list

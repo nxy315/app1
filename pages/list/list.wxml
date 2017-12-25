@@ -1,18 +1,23 @@
 <!--pages/list/list.wxml-->
+<view id="loading" wx:if="{{loading}}">
+  <image src="../../images/loading.gif"></image>
+</view>
 <view id="filterWrap">
   <view class="fixed-filter">
     <view wx:for="{{filter}}" wx:key="{{index}}" data-index="{{index}}" class="{{filterIndex == index ? 'filter active' : 'filter'}}" bindtap="tapFilter">
       {{item}}
       <view class="{{filterIndex == index ? 'triangle down' : 'triangle up'}}"></view>
     </view>
-    
   </view>
+
   <view class="filter-list" wx:if="{{filterIndex == 0}}">
     <view wx:for="{{quotaData}}" wx:key="{{index}}" data-index="{{index}}" data-title="{{item.title}}" bindtap="chooseQuota" class="{{quotaIndex == index ? 'list-item active' : 'list-item'}}">{{item.title}}</view>
   </view>
+
   <view class="filter-list" wx:if="{{filterIndex == 1}}">
     <view wx:for="{{fileData}}" wx:key="{{index}}" data-index="{{index}}" data-title="{{item.title}}" bindtap="chooseFile" class="{{fileIndex == index ? 'list-item active' : 'list-item'}}">{{item.title}}</view>
   </view>
+
   <view class="filter-list" wx:if="{{filterIndex == 2}}">
     <view wx:for="{{termData}}" wx:key="{{index}}" data-index="{{index}}" data-title="{{item.title}}" bindtap="chooseTerm" class="{{termIndex == index ? 'list-item active' : 'list-item'}}">{{item.title}}</view>
   </view>
@@ -41,15 +46,15 @@
     <view class="details">
       <view class="detail">
         <text class="detail-des">可借额度</text>
-        <text class="detail-money">2000~10万</text>
+        <text class="detail-money">{{item.money_from + item.money_from_unit}}</text>
       </view>
       <view class="detail">
-        <text class="detail-des">月利率</text>
-        <text class="detail-money">0.8%</text>
+        <text class="detail-des">借款期限</text>
+        <text class="detail-money">{{item.term + item.term_unit}}</text>
       </view>
       <view class="detail">
         <text class="detail-des">下款时间</text>
-        <text class="detail-money">当天放款</text>
+        <text class="detail-money">{{item.audit_time + item.audit_unit}}</text>
       </view>
     </view>
   </view>

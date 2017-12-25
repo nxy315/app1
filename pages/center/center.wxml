@@ -24,6 +24,25 @@
   <view class="bind-btn" bindtap="loginPage">已绑定</view>
 </view>
 
+<view class="static">
+  <view class="static-item">
+    <view class="item-name">邀请人数</view>
+    <view class="item-count">889</view>
+  </view>
+  <view class="static-item">
+    <view class="item-name">累积佣金</view>
+    <view class="item-count">1000</view>
+  </view>
+  <view class="static-item">
+    <view class="item-name">可提现佣金</view>
+    <view class="item-count">900</view>
+  </view>
+  <!-- <view class="static-item">
+    <view class="item-name"></view>
+    <view class="item-count"></view>
+  </view> -->
+</view>
+
 <view id="menu">
   <view class="menu-item" bindtap="showAction">
     <view class="menu-icon">
@@ -35,7 +54,7 @@
     </view>
   </view>
   
-  <button class="kfbtn menu-item" open-type="contact">
+  <button class="kfbtn menu-item" open-type="contact" bindtap="getKF">
     <view class="menu-icon">
       <image class="arrow" src="../../images/menu_kf.png"></image>
     </view>
@@ -44,7 +63,7 @@
       <image class="arrow" src="../../images/enter.png"></image>
     </view>
   </button>
-  <button class="kfbtn menu-item" open-type="share">
+  <navigator url="../Invitation/Invitation" class="kfbtn menu-item">
     <view class="menu-icon">
       <image class="arrow" src="../../images/share.png"></image>
     </view>
@@ -52,7 +71,7 @@
       <text class="name">邀请好友</text>
       <image class="arrow" src="../../images/enter.png"></image>
     </view>
-  </button>
+  </navigator>
   <navigator url="../qrcode/qrcode" class="menu-item">
     <view class="menu-icon">
       <image class="arrow" src="../../images/qrcode.png"></image>
@@ -71,15 +90,22 @@
       <image class="arrow" src="../../images/enter.png"></image>
     </view>
   </navigator>
-  <navigator url="../introduce/introduce" class="menu-item" bindtap="screenImg">
+  <navigator url="../introduce/introduce" class="menu-item">
     <view class="menu-icon">
       <image class="arrow" src="../../images/introduce.png"></image>
     </view>
     <view class="menu-name">
-      <text class="name">相关简介</text>
+      <text class="name">关于公共钱包</text>
       <image class="arrow" src="../../images/enter.png"></image>
     </view>
   </navigator>
+</view>
+
+<view class="copyright">
+  <view>上海九列信息科技有限公司</view>
+  <view>Copyright©2018</view>
+  <view>沪ICP备16003711号</view>
+  <view>400-186-5001</view>
 </view>
 
 <!-- <action-sheet hidden="{{actionSheetHidden}}">

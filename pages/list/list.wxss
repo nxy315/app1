@@ -92,3 +92,20 @@
   color: #999;
   background-color: #f1f3f4;
 }
+
+#loading{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: #fff;
+}
+#loading image{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -91.5rpx;
+  margin-top: -132.5rpx;
+  width: 183rpx;
+  height: 265rpx;
+}

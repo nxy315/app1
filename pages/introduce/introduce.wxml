@@ -1,4 +1,4 @@
 <!--pages/introduce/introduce.wxml-->
 <view>
-  相关简介(待开发)
+  <image src="../../images/about.jpg"></image>
 </view>
