@@ -1,14 +1,18 @@
 // pages/center/center.js
 const app = getApp()
 const html2canvas = require('../../utils/html2canvas.js');
-
+var Crypto = require('../../utils/cryptojs/cryptojs').Crypto;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
+    login: false,
+    username: '',
+    all_money: '',
+    invite_people: '',
+    money: '',
     hasUserInfo: false,
     // canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -82,6 +86,43 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var _this = this;
+    var token = wx.getStorageSync('token');
+    if (token) {
+      var time = Date.parse(new Date()) / 1000;
+      var key = Crypto.MD5(token + time) || '';
+      wx.request({
+        method: 'post',
+        url: app.globalData.dataUrl + '/thirdApi/Usercenter/UserInfo',
+        data: {
+          token: token,
+          key: key,
+          time: time
+        },
+        dataType: 'json',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+          if (res.data.status == 'success') {
+            wx.setStorage({
+              key: 'userId',
+              data: res.data.data.user_id
+            })
+            _this.setData({
+              login: true,
+              username: res.data.data.username,
+              all_money: res.data.data.all_money,
+              invite_people: res.data.data.invite_people,
+              money: res.data.data.money,
+            })
+          } else {
+
+          }
+        }
+      })
+    }
+
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {

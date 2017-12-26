@@ -9,33 +9,33 @@
   <view wx:if="{{!hasUserInfo}}" class="userName">暂未授权</view>
   <view wx:if="{{hasUserInfo}}" class="userName">{{userInfo.nickName}}</view>  
 </view>
-  
-
 
 <view id="bindPhoneWrap">
   <view class="cover">
     <image src="../../images/mobilephone2_fill.png"></image>
   </view>
   <view class="phone">
-    <text class="tel">17777777777</text>
+    <text class="tel" wx:if="{{!login}}">未绑定手机号</text>
+    <text class="tel" wx:if="{{login}}">{{username}}</text>
     <text class="tel-des">绑定即可查看申请进度，定制贷款产品等服务</text>
   </view>
   <!-- <view class="bind-btn">未绑定</view> -->
-  <view class="bind-btn" bindtap="loginPage">已绑定</view>
+  <view class="bind-btn" wx:if="{{!login}}" bindtap="loginPage">去绑定</view>
+  <view class="bind-btn" wx:if="{{login}}" bindtap="loginPage">已绑定</view>
 </view>
 
-<view class="static">
+<view class="static" wx:if="{{login}}">
   <view class="static-item">
     <view class="item-name">邀请人数</view>
-    <view class="item-count">889</view>
+    <view class="item-count">{{invite_people}}</view>
   </view>
   <view class="static-item">
     <view class="item-name">累积佣金</view>
-    <view class="item-count">1000</view>
+    <view class="item-count">{{all_money}}</view>
   </view>
   <view class="static-item">
     <view class="item-name">可提现佣金</view>
-    <view class="item-count">900</view>
+    <view class="item-count">{{money}}</view>
   </view>
   <!-- <view class="static-item">
     <view class="item-name"></view>
@@ -63,7 +63,7 @@
       <image class="arrow" src="../../images/enter.png"></image>
     </view>
   </button>
-  <navigator url="../Invitation/Invitation" class="kfbtn menu-item">
+  <navigator url="../Invitation/Invitation" class="kfbtn menu-item" wx:if="{{login}}">
     <view class="menu-icon">
       <image class="arrow" src="../../images/share.png"></image>
     </view>

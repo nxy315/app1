@@ -1,17 +1,24 @@
 <!--pages/login/login.wxml-->
+<import src="../../utils/toast/toast.wxml"></import>
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+
 <view>
   <view class="login-title">绑定即可查看申请进度，定制贷款产品等服务</view>
-  <view class="input-box tel-box">
-    <view class="input-name">手机号</view>
-    <input class="input-value tel" bindinput="inputPhone" placeholder='请输入您的手机号'></input>
-    <view id="getCode" wx:if="{{!codeErr}}" bindtap="getCode">获取验证码</view>
-    <view id="codeErr" wx:if="{{codeErr}}">获取验证码</view>
-    <view id="second">s后重新获取</view>
-  </view>
-  <view class="input-box">
-    <view class="input-name">验证码</view>
-    <input class="input-value code" bindinput="inputCode" placeholder='输入验证码'></input>
+  <view class="input-wrap">
+    <view class="input-box tel-box">
+      <view class="input-name">手机号</view>
+      <input class="input-value tel" bindinput="inputPhone" placeholder='请输入您的手机号'></input>
+      <view id="getCode" wx:if="{{codeErr&&!sending}}" bindtap="getCode">获取验证码</view>
+      <view id="codeErr" wx:if="{{!codeErr&&!sending}}">获取验证码</view>
+      <view id="second" wx:if="{{sending}}">{{second}}s后重新获取</view>
+    </view>
+    <view class="input-box">
+      <view class="input-name">验证码</view>
+      <input class="input-value code" bindinput="inputCode" placeholder='输入验证码'></input>
+    </view>
   </view>
 
   <view id="bindBtn" bindtap="login">点击绑定</view>
 </view>
+
+{{test}}

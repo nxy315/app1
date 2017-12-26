@@ -1,5 +1,8 @@
 //app.js
+var wxToast = require('./utils/toast/toast')
+
 App({
+  wxToast,
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

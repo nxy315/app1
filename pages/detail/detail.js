@@ -9,8 +9,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    money: '',
+    date: 30,
+    userInfo: {},
     detailData: {},
-    id: ''
+    id: '',
+    canvasSrc: ''
   },
 
   getKF: function() {
@@ -42,6 +46,26 @@ Page({
     });
   },
 
+  getSrc: function() {
+    var _this = this;
+    wx.canvasToTempFilePath({
+      x: 0,
+      y: 0,
+      width: 1000,
+      height: 800,
+      destWidth: 1000,
+      destHeight: 800,
+      fileType: 'png',
+      canvasId: 'myCanvas',
+      success: function (res) {
+        console.log(res.tempFilePath)
+        _this.setData({
+          canvasSrc: res.tempFilePath
+        })
+      }
+    })
+  },
+
   getData: function(id) {
     var _this = this;
 
@@ -57,6 +81,7 @@ Page({
       },
       success: function (res) {
         _this.setData({
+          money: res.data.data.start_money,
           detailData: res.data.data
         })
       }
@@ -145,7 +170,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    
   },
 
   /**

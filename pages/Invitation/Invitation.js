@@ -5,14 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    id: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    if(wx.getStorageSync("userId")) {
+      this.setData({
+        id: wx.getStorageSync("userId")
+      })
+    }
   },
 
   /**
@@ -61,6 +65,15 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    return {
+      title: '公共钱包',
+      path: '/pages/login/login?id=' + this.data.id,
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 })

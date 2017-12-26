@@ -1,10 +1,12 @@
 <!--pages/info/info.wxml-->
 <!-- <image class="info-bg" mode="aspectFill" src="../../images/info_bg.png"></image> -->
+<import src="../../utils/toast/toast.wxml"></import>
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
 
 <view id="infoForm">
   <view class="form-item">
     <view class="form-name">您的姓名</view>
-    <input class="form-content" placeholder='请输入您的姓名'/>
+    <input class="form-content" bindinput="getName" placeholder='请输入您的姓名'/>
   </view>
   <view class="form-item">
     <view class="form-name">选择性别</view>
@@ -26,7 +28,7 @@
   </view>
   <view class="form-item">
     <view class="form-name">贷款金额</view>
-    <input maxlength="6" class="form-content input-content" placeholder='请输入贷款金额'/>
+    <input maxlength="6" bindinput="getMoney" class="form-content input-content" placeholder='请输入贷款金额'/>
     <view class="text-content">万元</view>
   </view>
   <view class="form-item">
@@ -44,11 +46,12 @@
   </view>
   <view class="form-item">
     <view class="form-name">短信验证码</view>
-    <input class="form-content input-content" placeholder='请输短信验证码'/>
-    <view class="text-content get-code" wx:if="{{correctPhone}}" bindtap="getCode">获取验证码</view>
-    <view class="text-content" wx:if="{{!correctPhone}}">获取验证码</view>
+    <input class="form-content input-content" bindinput="inputCode" placeholder='请输短信验证码'/>
+    <view class="text-content get-code" wx:if="{{correctPhone&&!sending}}" bindtap="getCode">获取验证码</view>
+    <view class="text-content" wx:if="{{!correctPhone&&!sending}}">获取验证码</view>
+    <view class="text-content second" wx:if="{{sending}}">{{second}}s后重新获取</view>
   </view>
-  <view id="submit">发布需求</view>
+  <view id="submit" bindtap="submitForm">发布需求</view>
 </view>
 
 <view class="foot-des">

@@ -1,2 +1,5 @@
 <!--pages/Invitation/Invitation.wxml-->
-<image src="../../images/invitation.jpg"></image>
+<view class="wrap">
+  <image src="../../images/invitation.jpg"></image>
+  <button class="share-btn" open-type="share" bindtap="share"></button>
+</view>

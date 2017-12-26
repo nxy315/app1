@@ -52,12 +52,11 @@ Page({
     var _this = this;
     wx.request({
       method: 'post',
-      url: app.globalData.dataUrl + '/thirdApi/index/index', //仅为示例，并非真实的接口地址
+      url: app.globalData.dataUrl + '/thirdApi/index/index',
       data: {},
       dataType: 'json',
       header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
-        // 'content-type': 'application/json' // 默认值
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
         _this.setData({

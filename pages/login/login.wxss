@@ -23,23 +23,24 @@ page{
 .input-value{
   margin-left: 70rpx;
 }
-#getCode,#codeErr{
-  width: 160rpx;
+#getCode,#codeErr,#second{
+  width: 180rpx;
   font-size: 24rpx;
   text-align: right;
 }
+
 #getCode{
   color: #3f96f8;
 }
 
-#codeErr{
+#codeErr,#second{
   color: #999;
 }
 .tel-box{
   border-bottom: 2rpx solid #eaeaea;
 }
 .tel{
-  width: 338rpx;
+  width: 318rpx;
   height: 98rpx;
 }
 
@@ -61,4 +62,7 @@ page{
 }
 #bindBtn:active{
   background-color: #0555c7;
+}
+.input-wrap{
+  margin-top: 150rpx;
 }
