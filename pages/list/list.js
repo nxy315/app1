@@ -8,51 +8,59 @@ Page({
    */
   data: {
     loading: true,
-    filter: ['额度不限', '资料不限', '期限不限'],
+    filter: ['额度不限', '期限不限'],
     filterIndex: -1,
-    quotaIndex: 0,
+    quotaIndex: 2,
     quotaData: [{ title: '额度不限', id: 1 }, { title: '1~5千', id: 2 }, { title: '5千~1万', id: 3 }, { title: '1~5万', id: 4 }, { title: '5万以上', id: 5 }],
-    fileData: [{ title: '资料不限', id: 1 }, { title: '我有身份证', id: 2 }, { title: '我有信用卡', id: 3 }, { title: '我有网购账号', id: 4 }, { title: '我有支付宝账号', id: 5 }, { title: '我有认证手机号', id: 6 }],
+    fileData: [],
     termData: [{ title: '期限不限', id: 1 }, { title: '1~6个月', id: 2 }, { title: '6~12个月', id: 3 }, { title: '12个月以上', id: 4 }],
     fileIndex: 0,
     termIndex: 0,
     listData: [],
     total: 0,
     start: 1,
-    length: 6,
-    money_cate: 2,
-    material_cate: 1,
+    money_cate: 1,
+    material_cate: null,
     date_cate: 1
   },
 
   /* 获取列表数据 */
-  getList: function() {
+  getList: function(type) {
     wx.showNavigationBarLoading()
     this.setData({
-      loading: false
+      loading: true
     })
     var _this = this;
     wx.request({
       method: 'post',
-      url: app.globalData.dataUrl + '/thirdApi/index/SuperMarket', //仅为示例，并非真实的接口地址
+      url: app.globalData.dataUrl + '/thirdApi/index/SuperMarket',
       data: {
         start: this.data.start,
-        length: this.data.length,
-        // money_cate: this.data.money_cate,
-        // material_cate: this.data.material_cate,
-        // date_cate: this.data.date_cate,
+        length: 6,
+        money_cate: this.data.money_cate,
+        material_cate: this.data.material_cate,
+        date_cate: this.data.date_cate,
       },
       // dataType: 'json',
       header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
         wx.hideNavigationBarLoading();
-        wx.stopPullDownRefresh();        
-        _this.setData({
-          listData: _this.data.listData.concat(res.data.data.list),
-          total: res.data.data.total
-        })
+        wx.stopPullDownRefresh();
+        if(type == 1) {
+          _this.setData({
+            listData: res.data.data.list,
+            total: res.data.data.total,
+            loading: false
+          })
+        } else if(type == 2) {
+          _this.setData({
+            listData: _this.data.listData.concat(res.data.data.list),
+            total: res.data.data.total,
+            loading: false
+          })
+        }     
       }
     })
   },
@@ -77,24 +85,31 @@ Page({
     var title = e.currentTarget.dataset.title;
     this.data.filter.splice(0, 1, title)
 
-    app.globalData.listParams = index;
+    app.globalData.list_id1 = index+1;
     this.setData({
       quotaIndex: index,
       filter: this.data.filter,
-      filterIndex: -1
+      filterIndex: -1,
+      start: 1,
+      money_cate: index+1
     })
+    this.getList(1);
   },
 
   /* 选择资料 */
   chooseFile: function(e) {
     var index = e.currentTarget.dataset.index;
     var title = e.currentTarget.dataset.title;
+    app.globalData.list_id2 = index;
     this.data.filter.splice(1, 1, title)
     this.setData({
       fileIndex: index,
       filter: this.data.filter,
-      filterIndex: -1
+      filterIndex: -1,
+      start: 1,
+      material_cate: index
     })
+    this.getList(1);
   },
 
   /* 选择期限 */
@@ -105,8 +120,11 @@ Page({
     this.setData({
       termIndex: index,
       filter: this.data.filter,
-      filterIndex: -1
+      filterIndex: -1,
+      start: 1,
+      date_cate: index
     })
+    this.getList(1);
   },
 
   /* 隐藏蒙版 */
@@ -145,21 +163,75 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
-    /* 进入页面判断是否带信息 */
-    var id = app.globalData.listParams, defaultData;
-    console.log(id);
-    if(id != this.data.id) {
-      defaultData = [this.data.quotaData[id - 1].title, '资料不限', '期限不限']
-      console.log(defaultData)
+    var _this = this;
 
-      this.setData({
-        filter: defaultData,
-        quotaIndex: id,
-        fileIndex: 0,
-        termIndex: 0
+    if (!app.globalData.list_id2) {
+      wx.request({
+        method: 'post',
+        url: app.globalData.dataUrl + '/thirdApi/index/SpecialList', //仅为示例，并非真实的接口地址
+        data: {},
+        dataType: 'json',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // 默认值
+        },
+        success: function (res) {
+          if (res.data.status == "success") {
+            app.globalData.id2_list = res.data.data;
+            app.globalData.list_id2 = res.data.data[0].id;
+
+            var filter = _this.data.filter
+            filter.splice(1, 0, res.data.data[0].cate_name)
+            _this.setData({
+              filter: filter,
+              fileData: res.data.data,
+              money_cate: app.globalData.list_id1,
+              material_cate: res.data.data[0].id,
+              date_cate: app.globalData.list_id3,
+            })
+            _this.getList(1);
+          }
+        }
       })
-      this.getList();
-    }  
+    } else {
+      var filter = _this.data.filter
+      if (this.data.filter.length >= 2) {
+        filter.splice(1, 1, app.globalData.id2_list[0].cate_name)
+      } else {
+        filter.splice(1, 0, app.globalData.id2_list[0].cate_name)
+      }
+      
+      filter.splice(0, 1, this.data.quotaData[app.globalData.list_id1 - 1].title)
+      _this.setData({
+        filter: filter,
+        fileData: app.globalData.id2_list,
+        money_cate: app.globalData.list_id1,
+        material_cate: app.globalData.id2_list[0].id,
+        date_cate: app.globalData.list_id3,
+      })
+      _this.getList(1);
+    }
+    /* 进入页面判断是否带信息 */
+    // var _this = this;
+    // if(!app.globalData.list_id2) {
+    //   wx.request({
+    //     method: 'post',
+    //     url: app.globalData.dataUrl + '/thirdApi/index/SpecialList', //仅为示例，并非真实的接口地址
+    //     data: {},
+    //     dataType: 'json',
+    //     header: {
+    //       'content-type': 'application/x-www-form-urlencoded' // 默认值
+    //     },
+    //     success: function (res) {
+    //       if (res.data.status == 'success') {
+    //         app.globalData.id2_list = res.data.data
+    //         app.globalData.list_id2 = res.data.data[0].id;
+    //         _this.setData({
+    //           quotaIndex: app.globalData.list_id1-1
+    //         })
+    //       }
+    //     }
+    //   })
+    // }
   },
 
   /**
@@ -181,18 +253,21 @@ Page({
    */
   onPullDownRefresh: function () {
     // console.log(1);
-    this.getList();
+    this.setData({
+      start: 1,
+    })
+    this.getList(1);
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if(this.data.start*this.data.length <= this.data.total) {
+    if(this.data.start*6 <= this.data.total) {
       this.setData({
         start: this.data.start + 1
       })
-      this.getList();
+      this.getList(2);
     }
   },
 

@@ -10,11 +10,113 @@ Page({
    */
   data: {
     money: '',
+    rate: '',
     date: 30,
+    day: '',
     userInfo: {},
     detailData: {},
     id: '',
-    canvasSrc: ''
+    canvasSrc: '',
+    green: '',
+    red: '',
+    gray: '',
+    monthIndex: 0,
+    monthArray: []
+  },
+
+  bindMonthPickerChange: function(e) {
+    var _this = this;
+    
+    this.setData({
+      monthIndex: e.detail.value
+    })
+    var green = parseInt(this.data.money);
+    var red = parseInt(green * _this.data.rate/100 * _this.data.monthArray[_this.data.monthIndex] * _this.data.date);
+    var gray = parseInt(green + red)
+    this.setData({
+      green: green,
+      red: red,
+      gray: gray,
+      day: parseInt(_this.data.monthArray[_this.data.monthIndex] * _this.data.date)
+    })
+    this.drawCircle(green, red, gray)
+  },
+
+  blurMoney: function(e) {
+    var value = e.detail.value
+    if (value < this.data.start) {
+      this.setData({
+        money: this.data.start
+      })
+    } else if (value > this.data.end) {
+      this.setData({
+        money: this.data.end
+      })
+    } else {
+      this.setData({
+        money: value
+      })
+    }
+
+    var green = parseInt(this.data.money);
+    var red = parseInt((this.data.rate / 100 * value * this.data.day).toFixed());
+    var gray = parseInt(green + red);
+    this.setData({
+      green: green,
+      red: red,
+      gray: gray
+    })
+    //先判断是不是在额度范围之内，如果小于范围取最小值，如果大于范围取最大值
+    this.drawCircle(green, red, gray)
+  },
+
+  drawCircle: function(green, red, gray) {
+    let windowWidth = 320;
+    try {
+      let res = wx.getSystemInfoSync();
+      windowWidth = res.windowWidth;
+    } catch (e) {
+      // do something when get system info failed
+    }
+
+    new wxCharts({
+      canvasId: 'myCanvas',
+      type: 'ring',
+      title: {
+        name: gray,
+        color: '#999999',
+        fontSize: 10
+      },
+      subtitle: {
+        name: '总还款',
+        color: '#999999',
+        fontSize: 10
+      },
+      series: [{
+        name: '1',
+        data: green,
+        color: '#32ccaa',
+        stroke: false
+      }, {
+        name: '2',
+        data: red,
+        color: '#ff856d',
+        stroke: false
+      }],
+      disablePieStroke: true,
+      width: windowWidth / 2,
+      height: windowWidth / 2,
+      left: 0,
+      top: 0,
+      legend: false,
+      dataLabel: false,
+      extra: {
+        ringWidth: windowWidth / 24,
+        pie: {
+          offsetAngle: -90,
+        }
+      }
+    })
   },
 
   getKF: function() {
@@ -46,25 +148,25 @@ Page({
     });
   },
 
-  getSrc: function() {
-    var _this = this;
-    wx.canvasToTempFilePath({
-      x: 0,
-      y: 0,
-      width: 1000,
-      height: 800,
-      destWidth: 1000,
-      destHeight: 800,
-      fileType: 'png',
-      canvasId: 'myCanvas',
-      success: function (res) {
-        console.log(res.tempFilePath)
-        _this.setData({
-          canvasSrc: res.tempFilePath
-        })
-      }
-    })
-  },
+  // getSrc: function() {
+  //   var _this = this;
+  //   wx.canvasToTempFilePath({
+  //     x: 0,
+  //     y: 0,
+  //     width: 1000,
+  //     height: 800,
+  //     destWidth: 1000,
+  //     destHeight: 800,
+  //     fileType: 'png',
+  //     canvasId: 'myCanvas',
+  //     success: function (res) {
+  //       console.log(res.tempFilePath)
+  //       _this.setData({
+  //         canvasSrc: res.tempFilePath
+  //       })
+  //     }
+  //   })
+  // },
 
   getData: function(id) {
     var _this = this;
@@ -80,10 +182,36 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success: function (res) {
-        _this.setData({
-          money: res.data.data.start_money,
-          detailData: res.data.data
-        })
+        if(res.data.status == 'success') {
+          // _this.setData({
+          //   green: res.data.data.start_money,
+          //   red: '',
+          //   gray: ''
+          // })
+
+          var arr = [];
+          for (var index in res.data.data.select_arr) {
+            arr.push(index/30)
+          }
+          var green = parseFloat(res.data.data.start_money)
+          var red = parseFloat((res.data.data.rate / 100 * res.data.data.start_money * arr[0]).toFixed())
+          var gray = parseFloat(red) + parseFloat(green)
+          _this.setData({
+            start: res.data.data.start_money,
+            end: res.data.data.end_money,
+            money: green,
+            day: arr[0],
+            rate: res.data.data.rate,
+            detailData: res.data.data,
+            monthArray: arr,
+            green: green,
+            red: red,
+            gray: gray
+          })
+          _this.drawCircle(green, red, gray);
+          
+        }
+        
       }
     })
   },
@@ -96,53 +224,6 @@ Page({
       id: id
     })
     this.getData(id)
-
-    let windowWidth = 320;
-    try {
-      let res = wx.getSystemInfoSync();
-      windowWidth = res.windowWidth;
-    } catch (e) {
-      // do something when get system info failed
-    }
-
-    new wxCharts({
-      canvasId: 'myCanvas',
-      type: 'ring',
-      title: {
-        name: '500元',
-        color: '#999999',
-        fontSize: 10
-      },
-      subtitle: {
-        name: '总还款',
-        color: '#999999',
-        fontSize: 10
-      },
-      series: [{
-        name: '1',
-        data: 1000,
-        color: '#32ccaa',
-        stroke: false
-      }, {
-        name: '2',
-        data: 50,
-        color: '#ff856d',
-        stroke: false
-      }],
-      disablePieStroke: true,
-      width: windowWidth/2,
-      height: windowWidth / 2,
-      left: 0,
-      top: 0,
-      legend: false,
-      dataLabel: false,
-      extra: {
-        ringWidth: windowWidth/24,
-        pie: {
-          offsetAngle: -90,
-        }
-      }
-    })
   },
 
   /**

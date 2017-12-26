@@ -24,16 +24,24 @@
     <view class="info-title">
       <view class="title-name">
         <view class="name">金额</view>
-        <view class="choose"></view>
+        <view class="choose">
+          <input class="money-input" type='number' bindblur="blurMoney" value='{{money}}'></input>
+          <view class="money-tail">元</view>
+        </view>
       </view>
       <text class="title-range">额度范围：{{detailData.start_money}}~{{detailData.end_money}}元</text>
     </view>
     <view class="info-title">
       <view class="title-name">
         <view class="name">期限</view>
-        <view class="choose"></view>
+        <picker class="form-content" bindchange="bindMonthPickerChange" value="{{monthIndex}}" range="{{monthArray}}">
+          <view class="choose select-month">
+            {{monthArray[monthIndex]}}个月
+            <image class="select-arrow" src="../../images/pulldown.png"></image>
+          </view>
+        </picker>
       </view>
-      <text class="title-range">期限范围：1-6个月</text>
+      <text class="title-range">期限范围：{{monthArray[0]}}~{{monthArray[monthArray.length - 1]}}个月</text>
     </view>
   </view>
   
@@ -45,21 +53,21 @@
       <view class="item-des">
         <view class="nail-item green"></view>
         <view class="wrap-des">
-          <text class="money-item">{{money}}元</text>
+          <text class="money-item">{{green}}元</text>
           <text class="des-item">贷款金额</text>
         </view>
       </view>
       <view class="item-des">
         <view class="nail-item red"></view>
         <view class="wrap-des">
-          <text class="money-item">30元</text>
+          <text class="money-item">{{red}}元</text>
           <text class="des-item">总利息（参考日利率{{detailData.rate}}%）</text>
         </view>
       </view>
       <view class="item-des">
         <view class="nail-item gray"></view>
         <view class="wrap-des">
-          <text class="money-item">{{money+money*detailData.rate*date}}元</text>
+          <text class="money-item">{{gray}}元</text>
           <text class="des-item">总还款</text>
         </view>
       </view>
@@ -115,8 +123,8 @@
     </view>
   </view> -->
 </view>
-<image src="{{canvasSrc}}" mode="aspectFill"></image>
-<button bindtap="getSrc">生成图片</button>
+<!-- <image src="{{canvasSrc}}" mode="aspectFill"></image>
+<button bindtap="getSrc">生成图片</button> -->
 
 <view class="block"></view>
 

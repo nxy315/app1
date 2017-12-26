@@ -21,7 +21,7 @@
   </view>
   <!-- <view class="bind-btn">未绑定</view> -->
   <view class="bind-btn" wx:if="{{!login}}" bindtap="loginPage">去绑定</view>
-  <view class="bind-btn" wx:if="{{login}}" bindtap="loginPage">已绑定</view>
+  <view class="bind-btn" wx:if="{{login}}">已绑定</view>
 </view>
 
 <view class="static" wx:if="{{login}}">

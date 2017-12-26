@@ -117,6 +117,31 @@ page{
   height: 55rpx;
   border: 1rpx solid #ccc;
   border-radius: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.product-info .title-wrap .info-title .title-name .choose .select-arrow{
+  margin: 0 20rpx 0 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.select-month{
+  color: #fa5f22;
+}
+.money-input{
+  width: 150rpx;
+  height: 55rpx;
+  text-align: right;
+  color: #fa5f22;
+}
+.money-tail{
+  margin: 0 20rpx 0 10rpx;
+  width: 40rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  text-align: center;
 }
 .product-info .title-wrap .info-title .title-range{
   font-size: 22rpx;
@@ -365,3 +390,4 @@ page{
   height: 50vw;
   /* transform: rotate(-90deg); */
 }
+

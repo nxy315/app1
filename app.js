@@ -40,6 +40,10 @@ App({
     // })
   },
   globalData: {
+    list_id1: 1,
+    list_id2: null,
+    list_id3: 1,
+    id2_list: [],
     listParams: 1,
     userInfo: null,
     dataUrl: 'https://www.necol.cn'

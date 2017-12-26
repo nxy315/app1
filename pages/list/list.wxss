@@ -109,3 +109,9 @@
   width: 183rpx;
   height: 265rpx;
 }
+.no-data{
+  padding-top: 100rpx;
+  color: #999;
+  font-size: 34rpx;
+  text-align: center;
+}

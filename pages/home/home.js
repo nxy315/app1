@@ -25,16 +25,46 @@ Page({
   toList: function(e) {
     var id = e.currentTarget.dataset.id;
 
-    if (id != "6") {
-      app.globalData.listParams = id;
-      wx.switchTab({
-        url: '../list/list',
+    if (!app.globalData.list_id2) {
+      wx.request({
+        method: 'post',
+        url: app.globalData.dataUrl + '/thirdApi/index/SpecialList', //仅为示例，并非真实的接口地址
+        data: {},
+        dataType: 'json',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // 默认值
+        },
+        success: function (res) {
+          if(res.data.status == 'success') {
+            app.globalData.id2_list = res.data.data
+            if (id != "6") {
+              app.globalData.list_id1 = id;
+              app.globalData.list_id2 = res.data.data[0].id;              
+              wx.switchTab({
+                url: '../list/list',
+              })
+            } else {
+              wx.switchTab({
+                url: '../info/info',
+              })
+            }
+          }
+        }
       })
     } else {
-      wx.switchTab({
-        url: '../info/info',
-      })
+      if (id != "6") {
+        app.globalData.list_id1 = id;
+        app.globalData.list_id2 = app.globalData.id2_list[0].id;
+        wx.switchTab({
+          url: '../list/list',
+        })
+      } else {
+        wx.switchTab({
+          url: '../info/info',
+        })
+      }
     }
+    
   },
 
   //跳转专题
