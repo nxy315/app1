@@ -10,7 +10,10 @@
     "pages/qrcode/qrcode",
     "pages/public/public",
     "pages/login/login",
-    "pages/Invitation/Invitation"
+    "pages/Invitation/Invitation",
+    "pages/adv/adv",
+    "pages/money/money",
+    "pages/bindAcount/bindAcount"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,8 +23,8 @@
   },
   "tabBar": {
     "color": "#999",
-    "selectedColor": "#000",
-    "borderStyle": "black",
+    "selectedColor": "#246cff",
+    "borderStyle": "#999",
     "backgroundColor": "#fff",
     "list": [
       {
@@ -43,7 +46,13 @@
         "selectedIconPath": "images/flashlight_fill.png"
       },
       {
-        "text": "我的",
+        "text": "公供汽车",
+        "pagePath": "pages/adv/adv",
+        "iconPath": "images/car.png",
+        "selectedIconPath": "images/car_active.png"
+      },
+      {
+        "text": "我",
         "pagePath": "pages/center/center",
         "iconPath": "images/people.png",
         "selectedIconPath": "images/people_fill.png"

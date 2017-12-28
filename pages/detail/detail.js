@@ -21,7 +21,8 @@ Page({
     red: '',
     gray: '',
     monthIndex: 0,
-    monthArray: []
+    monthArray: [],
+    monthValueArray: []
   },
 
   bindMonthPickerChange: function(e) {
@@ -31,13 +32,13 @@ Page({
       monthIndex: e.detail.value
     })
     var green = parseInt(this.data.money);
-    var red = parseInt(green * _this.data.rate/100 * _this.data.monthArray[_this.data.monthIndex] * _this.data.date);
-    var gray = parseInt(green + red)
+    var red = parseFloat((green * _this.data.rate / 100 * _this.data.monthValueArray[_this.data.monthIndex]).toFixed(4));
+    var gray = parseFloat(green + red)
     this.setData({
       green: green,
       red: red,
       gray: gray,
-      day: parseInt(_this.data.monthArray[_this.data.monthIndex] * _this.data.date)
+      day: parseInt(_this.data.monthValueArray[_this.data.monthIndex])
     })
     this.drawCircle(green, red, gray)
   },
@@ -59,8 +60,8 @@ Page({
     }
 
     var green = parseInt(this.data.money);
-    var red = parseInt((this.data.rate / 100 * value * this.data.day).toFixed());
-    var gray = parseInt(green + red);
+    var red = parseFloat((this.data.rate / 100 * value * this.data.day).toFixed(4));
+    var gray = parseFloat(green + red);
     this.setData({
       green: green,
       red: red,
@@ -183,27 +184,25 @@ Page({
       },
       success: function (res) {
         if(res.data.status == 'success') {
-          // _this.setData({
-          //   green: res.data.data.start_money,
-          //   red: '',
-          //   gray: ''
-          // })
 
-          var arr = [];
-          for (var index in res.data.data.select_arr) {
-            arr.push(index/30)
+          var arr1 = [];
+          var arr2 = []
+          for (var i = 0; i < res.data.data.select_arr.length; i++) {
+            arr1.push(res.data.data.select_arr[i].desc)
+            arr2.push(res.data.data.select_arr[i].day)
           }
           var green = parseFloat(res.data.data.start_money)
-          var red = parseFloat((res.data.data.rate / 100 * res.data.data.start_money * arr[0]).toFixed())
+          var red = parseFloat((res.data.data.rate / 100 * res.data.data.start_money * arr2[0]).toFixed(4))
           var gray = parseFloat(red) + parseFloat(green)
           _this.setData({
             start: res.data.data.start_money,
             end: res.data.data.end_money,
             money: green,
-            day: arr[0],
+            day: arr2[0],
             rate: res.data.data.rate,
             detailData: res.data.data,
-            monthArray: arr,
+            monthArray: arr1,
+            monthValueArray: arr2,
             green: green,
             red: red,
             gray: gray

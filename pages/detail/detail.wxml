@@ -1,6 +1,7 @@
 <!--pages/detail/detail.wxml-->
 <view class="product-cover">
-  <image class="cover-bg" mode="aspectFill" src="../../images/detail_bg.png"></image>
+  <view class="cover-bg"></view>
+  <!-- <image class="cover-bg" mode="aspectFill" src="../../images/detail_bg.png"></image> -->
   <view class="cover">
     <image src="{{detailData.logo}}" mode="aspectFill"></image>
   </view>
@@ -36,12 +37,12 @@
         <view class="name">期限</view>
         <picker class="form-content" bindchange="bindMonthPickerChange" value="{{monthIndex}}" range="{{monthArray}}">
           <view class="choose select-month">
-            {{monthArray[monthIndex]}}个月
+            {{monthArray[monthIndex]}}
             <image class="select-arrow" src="../../images/pulldown.png"></image>
           </view>
         </picker>
       </view>
-      <text class="title-range">期限范围：{{monthArray[0]}}~{{monthArray[monthArray.length - 1]}}个月</text>
+      <text class="title-range">期限范围：{{monthArray[0]}}~{{monthArray[monthArray.length - 1]}}</text>
     </view>
   </view>
   

@@ -9,15 +9,15 @@
   </view>
 
   <view class="filter-list" wx:if="{{filterIndex == 0}}">
-    <view wx:for="{{quotaData}}" wx:key="{{index}}" data-index="{{index}}" data-title="{{item.title}}" bindtap="chooseQuota" class="{{quotaIndex == index ? 'list-item active' : 'list-item'}}">{{item.title}}</view>
+    <view wx:for="{{quotaData}}" wx:key="{{index}}" data-index="{{item.id}}" data-title="{{item.title}}" bindtap="chooseQuota" class="{{quotaIndex == item.id ? 'list-item active' : 'list-item'}}">{{item.title}}</view>
   </view>
 
   <view class="filter-list" wx:if="{{filterIndex == 1}}">
-    <view wx:for="{{fileData}}" wx:key="{{index}}" data-index="{{item.id}}" data-title="{{item.cate_name}}" bindtap="chooseFile" class="{{fileIndex == index ? 'list-item active' : 'list-item'}}">{{item.cate_name}}</view>
+    <view wx:for="{{fileData}}" wx:key="{{index}}" data-index="{{item.id}}" data-title="{{item.cate_name}}" bindtap="chooseFile" class="{{fileIndex == item.id ? 'list-item active' : 'list-item'}}">{{item.cate_name}}</view>
   </view>
 
   <view class="filter-list" wx:if="{{filterIndex == 2}}">
-    <view wx:for="{{termData}}" wx:key="{{index}}" data-index="{{index}}" data-title="{{item.title}}" bindtap="chooseTerm" class="{{termIndex == index ? 'list-item active' : 'list-item'}}">{{item.title}}</view>
+    <view wx:for="{{termData}}" wx:key="{{index}}" data-index="{{item.id}}" data-title="{{item.title}}" bindtap="chooseTerm" class="{{termIndex == item.id ? 'list-item active' : 'list-item'}}">{{item.title}}</view>
   </view>
   <view id="mask" wx:if="{{filterIndex != -1}}" bindtap="maskHide"></view>
 </view>

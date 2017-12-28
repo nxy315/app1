@@ -1,6 +1,7 @@
 <!--pages/qrcode/qrcode.wxml-->
-<view>
-  <canvas></canvas>
-  
-  <image src="../../images/share_bg.png" id="test"></image>
+<view id="qrcodeWrap">
+  <canvas id="myCanvas" canvas-id="myCanvas"></canvas>
+  <image src="https://www.necol.cn/static/images/xcx/p_share.jpeg" bindload="loadImg"></image>
+  <image wx:if="{{url}}" id="qrcode" src="{{url}}" bindtap="previewImg"></image> 
+  <view id="save" bindtap="getImage">保存图片</view>
 </view>

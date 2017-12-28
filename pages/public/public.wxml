@@ -1,4 +1,4 @@
 <!--pages/public/public.wxml-->
-<view>
-  <image src="../../images/qrcode.jpeg"></image>
+<view class="wrap">
+  <image src="{{urls[0]}}" bindtap="previewImg"></image>
 </view>

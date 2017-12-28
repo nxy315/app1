@@ -1,0 +1,14 @@
+<!--pages/money/money.wxml-->
+<import src="../../utils/toast/toast.wxml"></import>
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+
+<view>
+  <view class="input-wrap">
+    <view class="input-box tel-box">
+      <view class="input-name">提现</view>
+      <input class="input-value" bindinput="inputMoney" placeholder='请输入您的提现金额'></input>
+    </view>
+  </view>
+
+  <view id="bindBtn" bindtap="getMoney">立即提现</view>
+</view>

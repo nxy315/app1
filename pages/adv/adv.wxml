@@ -1,0 +1,36 @@
+<!--pages/adv/adv.wxml-->
+<import src="../../utils/toast/toast.wxml"></import>
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+
+<view id="wrap">
+  <image class="bg" src="../../images/adv.png"></image>
+  <view id="form">
+    <view class="form-item">
+      <view class="item-name">姓名</view>
+      <view class="content-wrap">
+        <input placeholder='请输入' bindinput="getName"></input>
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="item-name">城市</view>
+      <view class="content-wrap">
+        <input placeholder='请选择城市' bindinput="getCity"></input>
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="item-name">手机</view>
+      <view class="content-wrap">
+        <input placeholder='请输入' bindinput="getPhone"></input>
+        <view class="getCode" wx:if="{{!sending}}" bindtap='getCode'>获取验证码</view>
+        <view class="getCode" wx:if="{{sending}}">{{second}}s后获取</view>
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="item-name">验证码</view>
+      <view class="content-wrap">
+        <input placeholder='请输入' bindinput="inputCode"></input>
+      </view>
+    </view>
+    <view id='apply' bindtap="submit">立即申请</view>  
+  </view>
+</view>

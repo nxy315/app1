@@ -2,7 +2,7 @@
 <view id="loading" wx:if="{{loading}}">
   <image src="../../images/loading.gif"></image>
 </view>
-<view id="fastEnter">
+<!-- <view id="fastEnter">
   <view class="enter" data-id="2" bindtap="toList">
     <view class="icon icon1">
       <image src="../../images/money0.png"></image>
@@ -33,12 +33,15 @@
     </view>
     <view class="des">急用钱</view>
   </view>
+</view> -->
+<view id="advWrap" bindtap="toAdv">
+  <image id='adv' src='../../images/adv.jpg'></image>
 </view>
 
-<view class="block"></view>
+ <!-- <view class="block"></view>  -->
 
 <view class="topic">
-  <view class="head">精选贷款专题</view>
+  <!-- <view class="head">精选贷款专题</view> -->
   <scroll-view scroll-x="true" class="cards">
 
     <view class="card-wrap" wx:for="{{specialData}}" wx:key="{{index}}">
@@ -52,12 +55,42 @@
   </scroll-view>
 </view>
 
-<view class="block"></view>
+ <!-- <view class="block"></view>  -->
 
 <view class="hot-list">
+  <view class="hot-title"> 
+    <text class="title">热门贷款</text> 
+     <!-- <text class="des">大家喜欢的才是最好的！</text>   -->
+  </view> 
+
+  <view class="list">
+
+    <view class="item" wx:for="{{hotData}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toDetail">
+      <view class="cover">
+        <image mode="aspectFill" src="{{item.logo}}"></image>
+      </view>
+      <view class="detail">
+        <view class="name">
+          <view>{{item.name}}</view>
+          <view class="tail">
+            <text class="time">{{item.audit_time + item.audit_unit}}</text>
+            <text class="fk">放款</text>
+          </view>
+        </view>
+        <view class="count">{{item.money_from + item.money_from_unit}} / {{item.apply_num}}人申请</view>
+        <!-- <view class="info">因为专业，所以恒久因为专业，所以</view> -->
+      </view>
+      <view class="apply">申请</view>
+    </view>
+
+  </view>
+</view>
+
+ <!-- <view class="block"></view>  -->
+<view class="hot-list">
   <view class="hot-title">
-    <text class="title">必借新产品</text>
-    <text class="des">借不到钱看这里</text>
+    <text class="title">最新借贷产品</text>
+     <!-- <text class="des">借不到钱看这里</text>  -->
   </view>
 
   <view class="list">
@@ -74,38 +107,7 @@
             <text class="fk">放款</text>
           </view>
         </view>
-        <view class="count">{{item.money_from + item.money_from_unit}}/{{item.apply_num}}人申请</view>
-        <!-- <view class="info">因为专业，所以恒久因为专业，所以</view> -->
-      </view>
-      <view class="apply">申请</view>
-    </view>
-
-  </view>
-</view>
-
-<view class="block"></view>
-
-<view class="hot-list">
-  <view class="hot-title">
-    <text class="title">热门产品人气榜</text>
-    <text class="des">大家喜欢的才是最好的！</text>
-  </view>
-
-  <view class="list">
-
-    <view class="item" wx:for="{{hotData}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toDetail">
-      <view class="cover">
-        <image mode="aspectFill" src="{{item.logo}}"></image>
-      </view>
-      <view class="detail">
-        <view class="name">
-          <view>{{item.name}}</view>
-          <view class="tail">
-            <text class="time">{{item.audit_time + item.audit_unit}}</text>
-            <text class="fk">放款</text>
-          </view>
-        </view>
-        <view class="count">{{item.money_from + item.money_from_unit}}/{{item.apply_num}}人申请</view>
+        <view class="count">{{item.money_from + item.money_from_unit}} / {{item.apply_num}}人申请</view>
         <!-- <view class="info">因为专业，所以恒久因为专业，所以</view> -->
       </view>
       <view class="apply">申请</view>

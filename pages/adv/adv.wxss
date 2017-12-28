@@ -1,0 +1,72 @@
+/* pages/adv/adv.wxss */
+#wrap{
+  font-size: 32rpx;
+  position: relative;
+}
+#wrap .bg{
+  width: 100vw;
+  height: 293vw;
+}
+
+#form{
+  position: absolute;
+  left: 122rpx;
+  top: 380rpx;
+  width: 500rpx;
+  height: 520rpx;
+}
+#form .form-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+#form .form-item .content-wrap{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30rpx;
+  background-color: #fff;
+  width: 370rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+}
+#form .form-item .content-wrap input{
+  flex: 1;
+  font-size: 26rpx;
+}
+
+#apply{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #003586;
+  color: #fff100;
+  border-radius: 40rpx;
+}
+
+#apply:active{
+  background-color: #0a449b;
+}
+
+.getCode{
+  margin-right: 2rpx;
+  width: 160rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 24rpx;
+  background-color: #003586;
+  border-radius: 0 35rpx 35rpx 0;
+}
+
+.getCode:active{
+  background-color: #0a449b;
+}

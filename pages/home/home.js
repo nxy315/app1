@@ -12,6 +12,13 @@ Page({
     newData: []
   },
 
+  //跳转广告
+  toAdv: function() {
+    wx.switchTab({
+      url: '../adv/adv',
+    })
+  },
+
   //跳转详情
   toDetail: function(e) {
     var id = e.currentTarget.dataset.id;

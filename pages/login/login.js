@@ -30,7 +30,7 @@ Page({
   /* 获取验证码 */
   getCode: function() {
     var _this = this;
-    var sd = 120;
+    var sd = 90;
     this.setData({
       sending: true
     })

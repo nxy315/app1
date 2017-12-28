@@ -21,7 +21,7 @@
   </view>
   <!-- <view class="bind-btn">未绑定</view> -->
   <view class="bind-btn" wx:if="{{!login}}" bindtap="loginPage">去绑定</view>
-  <view class="bind-btn" wx:if="{{login}}">已绑定</view>
+  <view class="bind-btn" wx:if="{{login}}" bindtap="logout">已绑定</view>
 </view>
 
 <view class="static" wx:if="{{login}}">
@@ -37,10 +37,10 @@
     <view class="item-name">可提现佣金</view>
     <view class="item-count">{{money}}</view>
   </view>
-  <!-- <view class="static-item">
-    <view class="item-name"></view>
-    <view class="item-count"></view>
-  </view> -->
+   <view class="static-item static-item-btn">
+    <view bindtap="getMoney" wx:if="{{!al_account}}" class="bindBtn">绑定提现账号</view>
+    <view bindtap="getMoney" wx:if="{{al_account}}" class="bindBtn">去提现</view>
+  </view> 
 </view>
 
 <view id="menu">

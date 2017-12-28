@@ -1,7 +1,8 @@
 /* pages/info/info.wxss */
 page{
-  padding: 100rpx 0 35rpx;
-  background-color: #f1f3f4;
+  padding: 70rpx 0 0;
+  /* background-color: #f1f3f4; */
+  background-image: linear-gradient(135deg, #2695eb, #5bb5fb)
 }
 .info-bg{
   position: fixed;
@@ -23,7 +24,7 @@ page{
   width: 680rpx;
   background-color: #fff;
   border-radius: 16rpx;
-  box-shadow: 0 8rpx 58rpx 4rpx #ccc;
+  box-shadow: 0 8rpx 58rpx 4rpx rgba(63, 84, 100, 0.4);
 }
 #infoForm .form-item{
   display: flex;
@@ -82,6 +83,7 @@ page{
 
 
 .foot-des{
+  margin-top: 20rpx;
   position: relative;
   z-index: 2;
   display: flex;
@@ -99,10 +101,11 @@ page{
 .foot-des .foot-item .foot-time{
   margin-bottom: 10rpx;
   font-size: 28rpx;
+  color: #fff;
 }
 .foot-des .foot-item .foot-info{
   font-size: 22rpx;
-  color: #999;
+  color: #fff;
 }
 .foot-des .arrow{
   margin: 0 50rpx;

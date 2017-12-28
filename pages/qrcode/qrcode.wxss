@@ -1,5 +1,31 @@
 /* pages/qrcode/qrcode.wxss */
-#test{
+#qrcodeWrap{
+}
+/* #qrcode{
+  width: 90vw;
+  height: 90vw;
+} */
+#myCanvas{
   width: 100vw;
-  height: 178vw;
+  height: 100vh;
+}
+
+#qrcode{
+  width: 100vw;
+  height: 100vh;
+}
+
+#save{
+  margin: 70rpx auto;
+  width: 666rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #0860de;
+  color: #fff;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+}
+#save:active{
+  background-color: #0555c7;
 }

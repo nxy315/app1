@@ -10,12 +10,12 @@ Page({
     loading: true,
     filter: ['额度不限', '期限不限'],
     filterIndex: -1,
-    quotaIndex: 2,
+    quotaIndex: 1,
     quotaData: [{ title: '额度不限', id: 1 }, { title: '1~5千', id: 2 }, { title: '5千~1万', id: 3 }, { title: '1~5万', id: 4 }, { title: '5万以上', id: 5 }],
     fileData: [],
-    termData: [{ title: '期限不限', id: 1 }, { title: '1~6个月', id: 2 }, { title: '6~12个月', id: 3 }, { title: '12个月以上', id: 4 }],
+    termData: [{ title: '期限不限', id: 1 }, { title: '30天以下', id: 2 }, { title: '1~6个月', id: 3 }, { title: '6~12个月', id: 4 }, { title: '一年以上', id: 5 }],
     fileIndex: 0,
-    termIndex: 0,
+    termIndex: 1,
     listData: [],
     total: 0,
     start: 1,
@@ -85,13 +85,13 @@ Page({
     var title = e.currentTarget.dataset.title;
     this.data.filter.splice(0, 1, title)
 
-    app.globalData.list_id1 = index+1;
+    app.globalData.list_id1 = index;
     this.setData({
       quotaIndex: index,
       filter: this.data.filter,
       filterIndex: -1,
       start: 1,
-      money_cate: index+1
+      money_cate: index
     })
     this.getList(1);
   },
@@ -116,6 +116,7 @@ Page({
   chooseTerm: function(e) {
     var index = e.currentTarget.dataset.index;
     var title = e.currentTarget.dataset.title;
+    app.globalData.list_id3 = index;
     this.data.filter.splice(2, 1, title)
     this.setData({
       termIndex: index,
@@ -164,8 +165,8 @@ Page({
    */
   onShow: function (options) {
     var _this = this;
-
-    if (!app.globalData.list_id2) {
+    
+    if (app.globalData.list_id2 == null) {
       wx.request({
         method: 'post',
         url: app.globalData.dataUrl + '/thirdApi/index/SpecialList', //仅为示例，并非真实的接口地址
@@ -182,6 +183,7 @@ Page({
             var filter = _this.data.filter
             filter.splice(1, 0, res.data.data[0].cate_name)
             _this.setData({
+              fileIndex: res.data.data[0].id,
               filter: filter,
               fileData: res.data.data,
               money_cate: app.globalData.list_id1,

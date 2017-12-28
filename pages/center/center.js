@@ -13,8 +13,21 @@ Page({
     all_money: '',
     invite_people: '',
     money: '',
+    al_account: '',
     hasUserInfo: false,
     // canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+
+  getMoney: function() {
+    if (!this.data.al_account) {
+      wx.navigateTo({
+        url: '../bindAcount/bindAcount',
+      })
+    } else {
+      wx.navigateTo({
+        url: '../money/money',
+      })
+    }
   },
 
   getKF: function () {
@@ -48,6 +61,23 @@ Page({
   loginPage: function() {
     wx.navigateTo({
       url: '../login/login',
+    })
+  },
+
+  logout: function() {
+    var _this = this;
+    wx.showModal({
+      title: '退出',
+      content: '确定退出么？',
+      success: function (res) {
+        if (res.confirm) {
+          wx.removeStorageSync('token');
+          wx.removeStorageSync('userId');
+          _this.setData({
+            login: false
+          })
+        }
+      }
     })
   },
 
@@ -111,6 +141,7 @@ Page({
             })
             _this.setData({
               login: true,
+              al_account: res.data.data.ali_no,
               username: res.data.data.username,
               all_money: res.data.data.all_money,
               invite_people: res.data.data.invite_people,

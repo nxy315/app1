@@ -1,5 +1,11 @@
 /* pages/public/public.wxss */
+.wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
 image{
-  width: 100%;
-  height: 100vw;
+  width: 90%;
+  height: 100vh;
 }

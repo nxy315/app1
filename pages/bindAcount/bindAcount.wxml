@@ -1,0 +1,14 @@
+<!--pages/bindAcount/bindAcount.wxml-->
+<import src="../../utils/toast/toast.wxml"></import>
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+
+<view>
+  <view class="input-wrap">
+    <view class="input-box tel-box">
+      <view class="input-name">支付宝账号</view>
+      <input class="input-value" bindinput="inputPhone" placeholder='请输入您的支付宝账号'></input>
+    </view>
+  </view>
+
+  <view id="bindBtn" bindtap="bindAccount">点击绑定</view>
+</view>

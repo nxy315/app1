@@ -3,7 +3,7 @@
 <template is="wxToast" data="{{...wxToastConfig}}"></template>
 
 <view>
-  <view class="login-title">绑定即可查看申请进度，定制贷款产品等服务</view>
+  <!-- <view class="login-title">绑定即可查看申请进度，定制贷款产品等服务</view> -->
   <view class="input-wrap">
     <view class="input-box tel-box">
       <view class="input-name">手机号</view>
@@ -20,5 +20,3 @@
 
   <view id="bindBtn" bindtap="login">点击绑定</view>
 </view>
-
-{{test}}

@@ -5,9 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    urls: ['https://www.necol.cn/static/images/xcx/qrcode1.jpg']
   },
-
+  previewImg: function() {
+    var _this = this;
+    
+    wx.previewImage({
+      urls: _this.data.urls,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
