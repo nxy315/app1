@@ -1,6 +1,5 @@
 // pages/center/center.js
 const app = getApp()
-const html2canvas = require('../../utils/html2canvas.js');
 var Crypto = require('../../utils/cryptojs/cryptojs').Crypto;
 Page({
 
@@ -16,6 +15,49 @@ Page({
     al_account: '',
     hasUserInfo: false,
     // canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+
+  toQrcode: function() {
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              // 可以将 res 发送给后台解码出 unionId
+              app.globalData.userInfo = res.userInfo
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (app.userInfoReadyCallback) {
+                app.userInfoReadyCallback(res)
+              }
+              wx.navigateTo({
+                url: '../qrcode/qrcode',
+              })
+            }
+          })
+        } else {
+          app.globalData.userInfo = null;
+          wx.authorize({
+            scope: 'scope.userInfo',
+            success() {
+              wx.getUserInfo({
+                success: res => {
+                  this.globalData.userInfo = res.userInfo
+
+                  if (app.userInfoReadyCallback) {
+                    app.userInfoReadyCallback(res)
+                  }
+                  wx.navigateTo({
+                    url: '../qrcode/qrcode',
+                  })
+                }
+              })
+            }
+          })
+        }
+      }
+    })
   },
 
   getMoney: function() {

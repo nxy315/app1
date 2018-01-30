@@ -2,6 +2,26 @@
 <import src="../../utils/toast/toast.wxml"></import>
 <template is="wxToast" data="{{...wxToastConfig}}"></template>
 
+
+<view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+    <view class="cityheader">
+      <view bindtap="open" class="city-cancel">取消</view>
+      <view bindtap="open" class="city-true">确定</view>
+    </view>
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+
 <view id="wrap">
   <image class="bg" src="../../images/adv.png"></image>
   <view id="form">
@@ -14,7 +34,7 @@
     <view class="form-item">
       <view class="item-name">城市</view>
       <view class="content-wrap">
-        <input placeholder='请选择城市' bindinput="getCity"></input>
+        <view class="city" bindtap="open">{{province}}-{{city}}-{{county}}</view>
       </view>
     </view>
     <view class="form-item">
@@ -33,4 +53,4 @@
     </view>
     <view id='apply' bindtap="submit">立即申请</view>  
   </view>
-</view>
+</view> 

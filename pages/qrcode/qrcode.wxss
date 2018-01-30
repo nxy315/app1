@@ -1,5 +1,6 @@
 /* pages/qrcode/qrcode.wxss */
 #qrcodeWrap{
+  padding-bottom: 70rpx;
 }
 /* #qrcode{
   width: 90vw;
@@ -14,7 +15,6 @@
   width: 100vw;
   height: 100vh;
 }
-
 #save{
   margin: 70rpx auto;
   width: 666rpx;

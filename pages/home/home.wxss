@@ -136,20 +136,30 @@
 .list .item .detail .name .tail{
   margin-left: 10rpx;
   font-size: 18rpx;
-  border: 1px solid #66a7cd;
-  border-radius: 5rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  /* border-radius: 5rpx; */
 }
 .list .item .detail .name .tail text{
+  display: block;
   padding: 0 6rpx;
-  height: 20rpx;
-  line-height: 20rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  box-sizing: border-box;
 }
 .list .item .detail .name .tail .time{
   background-color: #66a7cd;
-  color: white;  
+  color: white;
+  border-radius: 5rpx 0 0 5rpx;
 }
 .list .item .detail .name .tail .fk{
+  line-height: 28rpx; 
   color: #66a7cd;
+  border-radius: 0 5rpx 5rpx 0;
+  border: 1rpx solid #66a7cd;
+  
 }
 .list .item .detail .count{
   font-size: 26rpx;

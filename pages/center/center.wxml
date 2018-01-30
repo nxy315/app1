@@ -72,15 +72,15 @@
       <image class="arrow" src="../../images/enter.png"></image>
     </view>
   </navigator>
-  <navigator url="../qrcode/qrcode" class="menu-item">
+  <view class="menu-item" bindtap="toQrcode">
     <view class="menu-icon">
-      <image class="arrow" src="../../images/qrcode.png"></image>
+      <image class="arrow" src="../../images/share_p.png"></image>
     </view>
     <view class="menu-name border-b">
       <text class="name">分享朋友圈</text>
       <image class="arrow" src="../../images/enter.png"></image>
     </view>
-  </navigator>
+  </view>
   <navigator url="../public/public" class="menu-item">
     <view class="menu-icon">
       <image class="arrow" src="../../images/public.png"></image>

@@ -67,7 +67,7 @@ Page({
   onShareAppMessage: function () {
     return {
       title: '公共钱包',
-      path: '/pages/login/login?id=' + this.data.id,
+      path: '/pages/home/home?id=' + this.data.id,
       success: function (res) {
         // 转发成功
       },

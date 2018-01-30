@@ -1,4 +1,4 @@
 <!--pages/introduce/introduce.wxml-->
 <view>
-  <image src="../../images/about.jpg"></image>
+  <image src="../../images/about.jpeg"></image>
 </view>

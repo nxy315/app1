@@ -135,6 +135,9 @@ Page({
         success: function (res) {
           console.log(res.data)
           if (res.data.status == 'success') {
+            if(!invite_id) {
+              wx.removeStorageSync('from_id')
+            }
             //登录成功
             app.wxToast({
               title: '登录成功',
@@ -174,9 +177,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (options.id) {
+    var fromId = wx.getStorageSync('from_id');
+    if (fromId) {
       this.setData({
-        id: options.id
+        id: fromId
       })
     }
     

@@ -6,18 +6,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-    url: ''
+    url: '',
+    urls: [],
+  },
+  previewImg: function() {
+    var _this = this;
+    wx.previewImage({
+      urls: _this.data.urls
+    })
   },
 
   getImage: function() {
     var _this = this;
     wx.canvasToTempFilePath({
-      destWidth: 380,
-      destHeight: 700,
+      destWidth: 405,
+      destHeight: 640,
       canvasId: 'myCanvas',
+      quality: 1,
       success: function (res) {
         _this.setData({
-          url: res.tempFilePath
+          url: res.tempFilePath,
+          urls: [res.tempFilePath]
         })
 
         wx.getSetting({
@@ -34,26 +43,33 @@ Page({
       }
     })
   },
-  loadImg: function(e) {
-    console.log(e)
-    const ctx = wx.createCanvasContext('myCanvas')
-
-    ctx.drawImage("https://www.necol.cn/static/images/xcx/p_share.jpeg", 0, 0, 380, 700)
-    ctx.drawImage("https://www.necol.cn/static/images/xcx/qrcode.png", 165, 325, 150, 150)
-    ctx.setFontSize(30)
-    ctx.fillStyle = "#b1b1b1";
-    ctx.fillText(app.globalData.userInfo.nickName + '的公共钱包', 18, 80)
-    ctx.save();
-    ctx.arc(250, 400, 30, 0, 2 * Math.PI);
-    ctx.clip();
-    ctx.drawImage(app.globalData.userInfo.avatarUrl, 210, 370, 60, 60)
-    ctx.restore()
-    ctx.draw()
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '分享到朋友圈'
+    })
+    var _this = this;
+    wx.getImageInfo({
+      src: app.globalData.userInfo.avatarUrl,
+      success: function(res) {
+
+        const ctx = wx.createCanvasContext('myCanvas')
+
+        ctx.drawImage("../../images/p_share.jpeg", 0, 0, 380, 700)
+        ctx.drawImage("../../images/qrcode.png", 165, 325, 150, 150)
+        ctx.setFontSize(26)
+        ctx.fillStyle = "#b1b1b1";
+        ctx.fillText(app.globalData.userInfo.nickName + '的公共钱包', 18, 80)
+        ctx.save();
+        ctx.arc(240, 400, 30, 0, 2 * Math.PI);
+        ctx.clip();
+        ctx.drawImage(res.path, 210, 370, 60, 60)
+        ctx.restore()
+        ctx.draw()
+      }
+    })
     
   },
 
